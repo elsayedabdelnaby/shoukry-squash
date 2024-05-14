@@ -58,15 +58,18 @@
                         <span class="menu-text">{{ __('dashboard.dashboard') }}</span>
                     </a>
                 </li>
-                {{-- <li class="menu-item {{ request()->routeIs('dashboard.settings.edit') ? 'menu-item-active' : null }}"
+
+                <li class="menu-item {{ request()->routeIs('dashboard.branches.*') ? 'menu-item-active' : null }}"
                     aria-haspopup="true">
-                    <a href="{{ route('dashboard.settings.edit', 1) }}" class="menu-link">
+                    <a href="{{ route('dashboard.branches.index') }}" class="menu-link">
                         <i class="menu-bullet menu-bullet-line">
                             <span></span>
                         </i>
-                        <span class="menu-text">{{ __('dashboard.settings') }}</span>
+                        <span class="menu-text">{{ __('dashboard.branches') }}</span>
                     </a>
                 </li>
+
+                {{--
                 <li class="menu-item {{ request()->routeIs('dashboard.salary-report') ? 'menu-item-active' : null }}"
                     aria-haspopup="true">
                     <a href="{{ route('dashboard.salary-report') }}" class="menu-link">

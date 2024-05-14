@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Dashboard\BranchController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -36,6 +36,16 @@ Route::group(
             Route::name('dashboard.')->middleware(['isAdmin'])->group(function () {
                 Route::get('/', [DashboardController::class, 'home'])->name('home');
                 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+                //branches
+                Route::name('branches.')->prefix('branches')->controller(BranchController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{branch}/edit', 'edit')->name('edit');
+                    Route::put('{branch}/update', 'update')->name('update');
+                    Route::delete('{branch}', 'destroy')->name('destroy');
+                });
             });
         });
     }
