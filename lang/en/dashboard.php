@@ -33,5 +33,17 @@ return [
     'branch_created_successfully' => 'Branch Created Successfully',
     'branch_updated_successfully' => 'Branch Updated Successfully',
     'branch_deleted_successfully' => 'Branch Deleted Successfully',
+    'court_created_successfully' => 'Court Created Successfully',
+    'court_updated_successfully' => 'Court Updated Successfully',
+    'court_deleted_successfully' => 'Court Deleted Successfully',
+    'branch_is_required' => 'Branch is required',
+    'court' => 'Court',
+    'courts' => 'Courts',
+    'new_court' => 'New Court',
+    'enter_court_details_and_submit' => 'Enter court details and submit',
+    'edit_court' => 'Edit Court',
+    'branch' => 'branch',
+    'select_branch' => 'Select Branch',
     
+
 ];

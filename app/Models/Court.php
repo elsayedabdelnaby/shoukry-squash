@@ -21,4 +21,9 @@ class Court extends Model
     {
         return LogOptions::defaults()->logOnlyDirty()->dontSubmitEmptyLogs();
     }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class, 'branch_id');
+    }
 }

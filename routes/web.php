@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Dashboard\CourtController;
 use App\Http\Controllers\Dashboard\BranchController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -45,6 +46,16 @@ Route::group(
                     Route::get('{branch}/edit', 'edit')->name('edit');
                     Route::put('{branch}/update', 'update')->name('update');
                     Route::delete('{branch}', 'destroy')->name('destroy');
+                });
+
+                //courts
+                Route::name('courts.')->prefix('courts')->controller(CourtController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{court}/edit', 'edit')->name('edit');
+                    Route::put('{court}/update', 'update')->name('update');
+                    Route::delete('{court}', 'destroy')->name('destroy');
                 });
             });
         });
