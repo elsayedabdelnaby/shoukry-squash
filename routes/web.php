@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\CoachController;
 use App\Http\Controllers\Dashboard\CourtController;
 use App\Http\Controllers\Dashboard\BranchController;
+use App\Http\Controllers\Dashboard\PackageController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -68,7 +69,17 @@ Route::group(
                     Route::put('{coach}/update', 'update')->name('update');
                     Route::delete('{coach}', 'destroy')->name('destroy');
                 });
-                
+
+                //packages
+                Route::name('packages.')->prefix('packages')->controller(PackageController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{package}/edit', 'edit')->name('edit');
+                    Route::put('{package}/update', 'update')->name('update');
+                    Route::delete('{package}', 'destroy')->name('destroy');
+                });
+
             });
         });
     }

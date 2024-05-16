@@ -63,4 +63,16 @@ return [
     'facebook_url_must_be_in_url_format' => 'Facebook url must be in url format',
     'twitter_url_must_be_in_url_format' => 'Twitter url must be in url format',
     'instagram_url_must_be_in_url_format' => 'instagram url must be in url format',
+    'package_created_successfully' => 'Package Created Successfully',
+    'package_updated_successfully' => 'Package Updated Successfully',
+    'package_deleted_successfully' => 'Package Deleted Successfully',
+    'packages' => 'Packages',
+    'brief' => 'Brief',
+    'sessions_number' => 'Sessions Number',
+    'new_package' => 'New Package',
+    'edit_package' => 'Edit Package',
+    'enter_package_details_and_submit' => 'Enter Package details and submit',
+    'brief_is_required' => 'Brief is required',
+    'sessions_number_is_required' => 'Sessions number is required',
+    
 ];
