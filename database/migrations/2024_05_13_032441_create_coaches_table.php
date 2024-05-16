@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('twitter_url')->nullable();
             $table->string('brief');
             $table->boolean('is_active')->default(true);
+            $table->string('image');
             $table->timestamps();
             $table->softDeletes();
         });
