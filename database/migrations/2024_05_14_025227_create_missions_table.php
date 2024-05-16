@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
-            $table->mediumText('mssions');
+            $table->mediumText('mission');
             $table->timestamps();
             $table->softDeletes();
         });

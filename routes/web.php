@@ -6,7 +6,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\CoachController;
 use App\Http\Controllers\Dashboard\CourtController;
 use App\Http\Controllers\Dashboard\BranchController;
+use App\Http\Controllers\Dashboard\MissionController;
 use App\Http\Controllers\Dashboard\PackageController;
+use App\Http\Controllers\Dashboard\ObjectiveController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -80,6 +82,26 @@ Route::group(
                     Route::delete('{package}', 'destroy')->name('destroy');
                 });
 
+                //missions
+                Route::name('missions.')->prefix('missions')->controller(MissionController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{mission}/edit', 'edit')->name('edit');
+                    Route::put('{mission}/update', 'update')->name('update');
+                    Route::delete('{mission}', 'destroy')->name('destroy');
+                });
+
+
+                //objectives
+                Route::name('objectives.')->prefix('objectives')->controller(ObjectiveController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{objective}/edit', 'edit')->name('edit');
+                    Route::put('{objective}/update', 'update')->name('update');
+                    Route::delete('{objective}', 'destroy')->name('destroy');
+                });
             });
         });
     }
