@@ -90,4 +90,11 @@ return [
     'objective_updated_successfully' => 'Objective Updated Successfully',
     'objective_deleted_successfully' => 'Objective Deleted Successfully',
     'enter_objective_details_and_submit' => 'Enter Objective Details and Submit',
+    'questions' => 'Questinos',
+    'phone' => 'Phone',
+    'subject' => 'Subject',
+    'message' => 'Message',
+    'status' => 'Status',
+    'answer' => 'Answer',
+    
 ];

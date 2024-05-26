@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Middleware\Web;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\CoachController;
@@ -8,6 +10,7 @@ use App\Http\Controllers\Dashboard\CourtController;
 use App\Http\Controllers\Dashboard\BranchController;
 use App\Http\Controllers\Dashboard\MissionController;
 use App\Http\Controllers\Dashboard\PackageController;
+use App\Http\Controllers\Dashboard\QuestionController;
 use App\Http\Controllers\Dashboard\ObjectiveController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -28,8 +31,8 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
     ],
     function () {
-        Route::get('/', function () {
-            return view('welcome');
+        Route::middleware([Web::class])->group(function () {
+            Route::get('/', [HomeController::class, 'index'])->name('home');
         });
 
         Route::prefix("dashboard")->group(function () {
@@ -98,6 +101,14 @@ Route::group(
                     Route::get('', 'index')->name('index');
                     Route::get('/create', 'create')->name('create');
                     Route::post('/store', 'store')->name('store');
+                    Route::get('{objective}/edit', 'edit')->name('edit');
+                    Route::put('{objective}/update', 'update')->name('update');
+                    Route::delete('{objective}', 'destroy')->name('destroy');
+                });
+
+                //questions
+                Route::name('questions.')->prefix('questions')->controller(QuestionController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
                     Route::get('{objective}/edit', 'edit')->name('edit');
                     Route::put('{objective}/update', 'update')->name('update');
                     Route::delete('{objective}', 'destroy')->name('destroy');
