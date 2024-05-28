@@ -23,24 +23,24 @@
     <!-- About Us Area start -->
     @include('sections.about')
     <!-- About Us Area end -->
-    <!-- Team Area start -->
-    @include('sections.teams')
-    <!-- Team Area end -->
-    <!-- Branches start -->
-    @include('sections.branches')
-    <!-- Branches end -->
     <!-- CTA Counter Area start -->
     @include('sections.statistics')
     <!-- CTA Counter Area end -->
+    <!-- Branches start -->
+    @include('sections.branches')
+    <!-- Branches end -->
+    <!-- Team Area start -->
+    @include('sections.teams')
+    <!-- Team Area end -->
     <!-- Pricing Package Area start -->
     @include('sections.packages')
     <!-- Pricing Package Area end -->
-    <!-- Contact Us start -->
-    @include('sections.contact_us')
-    <!-- Contact Us end -->
     <!-- Events start -->
     @include('sections.events')
     <!-- Events end -->
+    <!-- Contact Us start -->
+    @include('sections.contact_us')
+    <!-- Contact Us end -->
     <!-- footer area start -->
     @include('sections.footer')
     <!-- footer area end -->

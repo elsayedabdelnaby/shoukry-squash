@@ -124,6 +124,17 @@
                 </li>
 
 
+                <li class="menu-item {{ request()->routeIs('dashboard.events.*') ? 'menu-item-active' : null }}"
+                    aria-haspopup="true">
+                    <a href="{{ route('dashboard.events.index') }}" class="menu-link">
+                        <i class="menu-bullet menu-bullet-line">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">{{ __('dashboard.events') }}</span>
+                    </a>
+                </li>
+
+
                 <li class="menu-item {{ request()->routeIs('dashboard.questions.*') ? 'menu-item-active' : null }}"
                     aria-haspopup="true">
                     <a href="{{ route('dashboard.questions.index') }}" class="menu-link">

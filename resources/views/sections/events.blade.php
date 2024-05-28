@@ -1,3 +1,6 @@
+@php
+use Carbon\Carbon;
+@endphp
 <!-- Event Area start -->
 <section class="blog-area pt-100 pb-100 rel px-lg-0 px-3" id="events">
     <div class="container">
@@ -19,32 +22,35 @@
             </div>
         </div>
         <div class="row project-active g-4">
-            <div class="col-xl-4 col-md-6 item event">
-                <div class="blog-item">
-                    <div class="image">
-                        <span class="date">25 May</span>
-                        <img src="assets/images/blog/event2.jpg" alt="title" />
-                    </div>
-                    <div class="content">
-                        <ul class="blog-meta">
-                            <li>
-                                <span>New Tournament</span>
-                            </li>
-                            <li>
-                                <i class="far fa-clock"></i>
-                                <a href="#">05 May, 2024</a>
-                            </li>
-                        </ul>
-                        <h5>
-                            <a href="#">Join Our Yearly Competition</a>
-                        </h5>
-                        <a class="read-more" href="#">
-                            Read More
-                            <i class="far fa-angle-double-right mirror-x-rtl"></i>
-                        </a>
+            @foreach ($events as $event)
+                <div class="col-xl-4 col-md-6 item event">
+                    <div class="blog-item">
+                        @php
+                            $eventDate = new Carbon($event->date);
+                        @endphp
+                        <div class="image">
+                            <span class="date">{{ $eventDate->format('d F') }}</span>
+                            <img src="assets/images/blog/event2.jpg" alt="title" />
+                        </div>
+                        <div class="content">
+                            <ul class="blog-meta">
+                                <li>
+                                    <span>{{ $event->title }}</span>
+                                </li>
+                                <li>
+                                    <i class="far fa-clock"></i>
+
+                                    <a href="#">{{ $eventDate->format('d F, Y') }}</a>
+                                </li>
+                            </ul>
+                            <a class="read-more" href="#">
+                                Read More
+                                <i class="far fa-angle-double-right mirror-x-rtl"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
             <div class="col-xl-4 col-md-6 item upcoming-event">
                 <div class="blog-item">
                     <div class="image">
@@ -97,32 +103,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-md-6 item event">
-                <div class="blog-item">
-                    <div class="image">
-                        <span class="date">25 May</span>
-                        <img src="assets/images/blog/event2.jpg" alt="title" />
-                    </div>
-                    <div class="content">
-                        <ul class="blog-meta">
-                            <li>
-                                <span>New Tournament</span>
-                            </li>
-                            <li>
-                                <i class="far fa-clock"></i>
-                                <a href="#">05 May, 2024</a>
-                            </li>
-                        </ul>
-                        <h5>
-                            <a href="#">Join Our Yearly Competition</a>
-                        </h5>
-                        <a class="read-more" href="#">
-                            Read More
-                            <i class="far fa-angle-double-right mirror-x-rtl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
             <div class="col-xl-4 col-md-6 item upcoming-event">
                 <div class="blog-item">
                     <div class="image">
@@ -167,32 +147,6 @@
                         </ul>
                         <h5>
                             <a href="#">We are celebrating our Anniversary tomorrow</a>
-                        </h5>
-                        <a class="read-more" href="#">
-                            Read More
-                            <i class="far fa-angle-double-right mirror-x-rtl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 item event">
-                <div class="blog-item">
-                    <div class="image">
-                        <span class="date">25 May</span>
-                        <img src="assets/images/blog/event2.jpg" alt="title" />
-                    </div>
-                    <div class="content">
-                        <ul class="blog-meta">
-                            <li>
-                                <span>New Tournament</span>
-                            </li>
-                            <li>
-                                <i class="far fa-clock"></i>
-                                <a href="#">05 May, 2024</a>
-                            </li>
-                        </ul>
-                        <h5>
-                            <a href="#">Join Our Yearly Competition</a>
                         </h5>
                         <a class="read-more" href="#">
                             Read More

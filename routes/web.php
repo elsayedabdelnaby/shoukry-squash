@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\CoachController;
 use App\Http\Controllers\Dashboard\CourtController;
+use App\Http\Controllers\Dashboard\EventController;
 use App\Http\Controllers\Dashboard\BranchController;
 use App\Http\Controllers\Dashboard\MissionController;
 use App\Http\Controllers\Dashboard\PackageController;
@@ -104,6 +105,16 @@ Route::group(
                     Route::get('{objective}/edit', 'edit')->name('edit');
                     Route::put('{objective}/update', 'update')->name('update');
                     Route::delete('{objective}', 'destroy')->name('destroy');
+                });
+
+                //events
+                Route::name('events.')->prefix('events')->controller(EventController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{event}/edit', 'edit')->name('edit');
+                    Route::put('{event}/update', 'update')->name('update');
+                    Route::delete('{event}', 'destroy')->name('destroy');
                 });
 
                 //questions
