@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'question_created_successfully' => 'Question Created Sccuessfully',
+    'question_created_successfully' => 'Thanks, We Will Contact with You',
 ];

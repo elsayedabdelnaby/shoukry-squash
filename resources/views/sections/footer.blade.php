@@ -47,13 +47,13 @@
                     <div class="footer-widget gallery-widget">
                         <h5 class="footer-title">Latest Gallery</h5>
                         <div class="gallery">
-                        @foreach ($gallery as $image)
-                            <a href="{{ $image->image_url }}">
-                                <img src="{{ $image->image_url }}" alt="Gallery" />
-                                <i class="far fa-plus"></i>
-                            </a>
+                            @foreach ($general_settings['gallery'] as $image)
+                                <a href="{{ $image->image_url }}">
+                                    <img src="{{ $image->image_url }}" alt="Gallery" />
+                                    <i class="far fa-plus"></i>
+                                </a>
                             @endforeach
-                          
+
                         </div>
                     </div>
                 </div>

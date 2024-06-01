@@ -7,6 +7,7 @@ use App\Models\Mission;
 use App\Models\Package;
 use App\Models\Objective;
 use App\Http\Controllers\Controller;
+use App\Models\Coach;
 use App\Models\Gallery;
 use App\Models\Event;
 use App\Models\Question;
@@ -21,8 +22,10 @@ class HomeController extends Controller
         $objectives = Objective::orderBy('id')->get();
         $events = Event::where('show_in_home_page', true)->limit(10)->get();
         $upComingEvents = Event::where('date', '>=', date('Y-m-d'))
+            ->where('show_in_home_page', true)
             ->orderBy('date', 'asc')
             ->get();
+        $coaches = Coach::all();
         return view('home')->with([
             'missions' => $missions,
             'objectives' => $objectives,
@@ -30,11 +33,12 @@ class HomeController extends Controller
             'branches' => Branch::all(),
             'packages' => Package::all(),
             'events' => $events,
-            'upComingEvents' => $upComingEvents
+            'upComingEvents' => $upComingEvents,
+            'coaches' => $coaches
         ]);
     }
 
-    
+
     public function contactus(Request $request)
     {
         $question = new Question();
@@ -43,7 +47,7 @@ class HomeController extends Controller
         $question->subject = $request->subject;
         $question->message = $request->message;
         $question->save();
-        session()->flash('success', 'web.question_created_successfully');
+        session()->flash('success', __('web.question_created_successfully'));
         return redirect()->back();
     }
 }

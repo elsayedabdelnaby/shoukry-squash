@@ -41,12 +41,6 @@ Route::group(
             Route::post('/contact-us',  [HomeController::class, 'contactus'])->name('contactus');
         });
 
-        Route::middleware([Web::class])->group(function () {
-        });
-
-        Route::middleware([Web::class])->group(function () {
-        });
-
         Route::prefix("dashboard")->group(function () {
             Route::middleware('guest')->controller(LoginController::class)->group(function () {
                 Route::get('login', 'showDashboardLoginForm');
@@ -128,7 +122,7 @@ Route::group(
                     Route::delete('{event}', 'destroy')->name('destroy');
                 });
 
-                
+
                 //events
                 Route::name('gallery.')->prefix('gallery')->controller(GalleryController::class)->group(function () {
                     Route::get('', 'index')->name('index');

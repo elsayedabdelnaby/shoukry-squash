@@ -41,7 +41,4 @@
     <!-- Contact Us start -->
     @include('sections.contact_us')
     <!-- Contact Us end -->
-    <!-- footer area start -->
-    @include('sections.footer')
-    <!-- footer area end -->
 @endsection

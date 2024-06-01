@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Gallery;
 use App\Models\Setting;
 use Closure;
 use Illuminate\Http\Request;
@@ -18,6 +19,7 @@ class Web
     public function handle(Request $request, Closure $next): Response
     {
         $settings = Setting::find(1);
+        $gallery = Gallery::all();
         View::share('general_settings', [
             'phone_number' => $settings->phone_number,
             'instagram_page' => $settings->instagram_page,
@@ -25,6 +27,7 @@ class Web
             'session_duration' => $settings->session_duration,
             'members_count' => $settings->members_count,
             'experience_years' => $settings->experience_years,
+            'gallery' => $gallery,
         ]);
         return $next($request);
     }

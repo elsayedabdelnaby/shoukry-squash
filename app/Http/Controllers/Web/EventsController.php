@@ -9,25 +9,20 @@ use App\Models\Gallery;
 
 class EventsController extends Controller
 {
-    
+
     public function index()
     {
-        
-        $gallery = Gallery::orderBy('id')->get();
-        $events = Event::where('show_in_home_page', true)->orderBy('id', 'asc')->paginate(1);
+
+        $events = Event::orderBy('id', 'asc')->paginate(10);
         return view('events')->with([
-            'gallery' => $gallery,
             'events' => $events
         ]);
     }
 
     public function show($event)
     {
-        
-        $gallery = Gallery::orderBy('id')->get();
         $event = Event::where('slug', $event)->first();
         return view('events_details')->with([
-            'gallery' => $gallery,
             'event' => $event
         ]);
     }

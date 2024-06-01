@@ -30,7 +30,7 @@ class Event extends Model
 
     public function posters()
     {
-        $this->hasMany(EventPoster::class, 'event_id');
+        return $this->hasMany(EventPoster::class, 'event_id');
     }
 
     /**
@@ -52,7 +52,7 @@ class Event extends Model
     {
         return $this->main_image ? asset(Storage::url(self::$storagePath . '/' . $this->main_image)) : null;
     }
-    
+
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;

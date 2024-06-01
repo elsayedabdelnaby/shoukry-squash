@@ -30,7 +30,7 @@ use Carbon\Carbon;
                         @endphp
                         <div class="image">
                             <span class="date">{{ $eventDate->format('d F') }}</span>
-                            <img src="assets/images/blog/event2.jpg" alt="title" />
+                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}" alt="title" />
                         </div>
                         <div class="content">
                         <ul class="blog-meta">
@@ -61,7 +61,7 @@ use Carbon\Carbon;
                         @endphp
                         <div class="image">
                             <span class="date">{{ $eventDate->format('d F') }}</span>
-                            <img src="assets/images/blog/event2.jpg" alt="title" />
+                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}" alt="title" />
                         </div>
                         <div class="content">
                         <ul class="blog-meta">
@@ -92,9 +92,9 @@ use Carbon\Carbon;
                         @endphp
                         <div class="image">
                             <span class="date">{{ $eventDate->format('d F') }}</span>
-                            <img src="assets/images/blog/event2.jpg" alt="title" />
+                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}" alt="title" />
                         </div>
-                        
+
                     <div class="content">
                         <ul class="blog-meta">
                             <li>

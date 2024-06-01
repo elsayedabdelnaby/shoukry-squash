@@ -6,7 +6,7 @@
                 <div class="section-title text-white mb-15 rmb-45" data-aos="fade-left" data-aos-duration="1500"
                     data-aos-offset="50">
                     <span class="sub-title mb-10">JOIN OUR ACADEMY</span>
-                    <h2>WE BROADCAST LARGE SQUASH TOURNAMENTS</h2>
+                    <h2>Become a member of our growing squash family</h2>
                 </div>
             </div>
             <div class="col-lg-4 mb-25 text-lg-end" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">
