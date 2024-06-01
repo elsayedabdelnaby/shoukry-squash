@@ -93,7 +93,7 @@ return [
     'questions' => 'Questions',
     'enter_question_details_and_submit' => 'Enter Question Details and Submit',
     'question_updated_successfully' => 'Question Updated Sccuessfully',
-    'question_created_successfully' => 'Question Created Sccuessfully',
+    'question_created_successfully' => 'Thanks, We Will Contact with You',
     'edit_question' => 'Edit Question',
     'phone' => 'Phone',
     'subject' => 'Subject',
