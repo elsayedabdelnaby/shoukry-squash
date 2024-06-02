@@ -43,7 +43,7 @@
                 <div class="logo-outer">
                     <div class="logo">
                         <a href="#">
-                            <img src="{{ url(asset('assets/images/brand/logo-300.png')) }}" alt="Shoukry Squash Academy"
+                            <img src="{{ url(asset('public/assets/images/brand/logo-300.png')) }}" alt="Shoukry Squash Academy"
                                 title="Shoukry Squash Academy" />
                         </a>
                     </div>
@@ -55,7 +55,7 @@
                         <div class="navbar-header py-10">
                             <div class="mobile-logo">
                                 <a href="{{ route('home') }}">
-                                    <img width="70" src="{{ url(asset('assets/images/brand/logo-300.png')) }}"
+                                    <img width="70" src="{{ url(asset('public/assets/images/brand/logo-300.png')) }}"
                                         alt="Shoukry Squash Academy" title="Shoukry Squash Academy" />
                                 </a>
                             </div>
@@ -101,7 +101,7 @@
 
                 <!-- Menu Button -->
                 <div class="menu-btns ms-lg-auto">
-                    <a href="#contact" class="theme-btn me-4">
+                    <a href="{{ route('home') }}#contact" class="theme-btn me-4">
                         Get In Touch
                         <i class="far fa-angle-double-right"></i>
                     </a>

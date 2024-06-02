@@ -6,7 +6,7 @@
                 <div class="col-xl-4 col-lg-3">
                     <div class="footer-logo mb-45 rmb-25">
                         <a href="#">
-                            <img width="150" height="auto" src="{{ url(asset('assets/images/brand/logo-300.png')) }}"
+                            <img width="150" height="auto" src="{{ url(asset('public/assets/images/brand/logo-300.png')) }}"
                                 alt="Shoukry Squash Academy" />
                         </a>
                     </div>
@@ -14,9 +14,9 @@
                 <div class="col-xl-8 col-lg-9 text-lg-end">
                     <div class="footer-clients mb-30 rmb-10">
                         <div class="clients">
-                            <img src="{{ url(asset('assets/images/footer/client1.jpg')) }}" alt="Client" />
-                            <img src="{{ url(asset('assets/images/footer/client2.jpg')) }}" alt="Client" />
-                            <img src="{{ url(asset('assets/images/footer/client3.jpg')) }}" alt="Client" />
+                            <img src="{{ url(asset('public/assets/images/footer/client1.jpg')) }}" alt="Client" />
+                            <img src="{{ url(asset('public/assets/images/footer/client2.jpg')) }}" alt="Client" />
+                            <img src="{{ url(asset('public/assets/images/footer/client3.jpg')) }}" alt="Client" />
                         </div>
                         <h5>
                             Have Questions ? Call

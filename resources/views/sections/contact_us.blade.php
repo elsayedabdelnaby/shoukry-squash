@@ -61,7 +61,7 @@
                         </h6>
                         <h6>We Would be Happy To Help You !</h6>
                     </div>
-                    <img src="{{ url(asset('assets/images/about/contact.jpg')) }}" alt="Shoukry Squash Academy" />
+                    <img src="{{ url(asset('public/assets/images/about/contact.jpg')) }}" alt="Shoukry Squash Academy" />
                 </div>
             </div>
         </div>

@@ -40,7 +40,7 @@ class Press extends Model
      */
     protected function getImageCardUrlAttribute(): string|null
     {
-        return $this->image_card ? asset(Storage::url(self::$storagePath . '/' . $this->image_card)) : null;
+        return $this->image_card ? asset('public/' . Storage::url(self::$storagePath . '/' . $this->image_card)) : null;
     }
 
     /**
@@ -50,7 +50,7 @@ class Press extends Model
      */
     protected function getMainImageUrlAttribute(): string|null
     {
-        return $this->main_image ? asset(Storage::url(self::$storagePath . '/' . $this->main_image)) : null;
+        return $this->main_image ? asset('public/' . Storage::url(self::$storagePath . '/' . $this->main_image)) : null;
     }
 
 

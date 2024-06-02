@@ -10,7 +10,7 @@ class EventPoster extends Model
 {
     use HasFactory;
 
-     /**
+    /**
      * The table associated with the model.
      *
      * @var string
@@ -50,6 +50,6 @@ class EventPoster extends Model
      */
     public function getPosterURLAttribute()
     {
-        return $this->poster ? asset(Storage::url(self::$storagePath . '/' . $this->poster)) : null;
+        return $this->poster ? asset('public/' . Storage::url(self::$storagePath . '/' . $this->poster)) : null;
     }
 }
