@@ -47,30 +47,13 @@
                     <div class="footer-widget gallery-widget">
                         <h5 class="footer-title">Latest Gallery</h5>
                         <div class="gallery">
-                            <a href="assets/images/gallery/gallery1.jpg">
-                                <img src="assets/images/gallery/gallery1.jpg" alt="Gallery" />
-                                <i class="far fa-plus"></i>
-                            </a>
-                            <a href="assets/images/gallery/gallery2.jpg">
-                                <img src="assets/images/gallery/gallery2.jpg" alt="Gallery" />
-                                <i class="far fa-plus"></i>
-                            </a>
-                            <a href="assets/images/gallery/gallery3.jpg">
-                                <img src="assets/images/gallery/gallery3.jpg" alt="Gallery" />
-                                <i class="far fa-plus"></i>
-                            </a>
-                            <a href="assets/images/gallery/gallery2.jpg">
-                                <img src="assets/images/gallery/gallery2.jpg" alt="Gallery" />
-                                <i class="far fa-plus"></i>
-                            </a>
-                            <a href="assets/images/gallery/gallery3.jpg">
-                                <img src="assets/images/gallery/gallery3.jpg" alt="Gallery" />
-                                <i class="far fa-plus"></i>
-                            </a>
-                            <a href="assets/images/gallery/gallery1.jpg">
-                                <img src="assets/images/gallery/gallery1.jpg" alt="Gallery" />
-                                <i class="far fa-plus"></i>
-                            </a>
+                            @foreach ($general_settings['gallery'] as $image)
+                                <a href="{{ $image->image_url }}">
+                                    <img src="{{ $image->image_url }}" alt="Gallery" />
+                                    <i class="far fa-plus"></i>
+                                </a>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>

@@ -4,21 +4,21 @@ namespace App\Models;
 
 use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Support\Facades\Storage;
 
-class Event extends Model
+class Press extends Model
 {
     use HasFactory, LogsActivity, SoftDeletes;
 
-    protected $table = 'events';
+    protected $table = 'press';
 
     /**
      * The storage path which used to store files of the user on it
      */
-    public static $storagePath = 'events';
+    public static $storagePath = 'press';
 
     protected $guarded = [];
 
@@ -52,6 +52,7 @@ class Event extends Model
     {
         return $this->main_image ? asset(Storage::url(self::$storagePath . '/' . $this->main_image)) : null;
     }
+
 
     public function setTitleAttribute($value)
     {

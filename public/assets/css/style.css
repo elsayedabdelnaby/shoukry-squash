@@ -8106,10 +8106,11 @@ h6,
 .blog-meta li a:hover {
   color: var(--primary-color);
 }
-.blog-meta li:first-child a,
+/*.blog-meta li:first-child a,
 .blog-meta li:first-child span {
   color: var(--primary-color);
 }
+*/
 .blog-meta li:not(:last-child) {
   margin-right: 25px;
 }
@@ -8285,11 +8286,6 @@ h6,
 }
 
 /* Blog Standard */
-.blog-details-image,
-.blog-details-content,
-.service-standard-wrap {
-  max-width: 760px;
-}
 
 /* Blog Details */
 .blog-details-image img {

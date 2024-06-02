@@ -32,34 +32,32 @@
                     <!-- Name -->
                     <div class="col-12 col-sm-12 col-md-5 col-lg-4">
                         <x-dashboard.form.columns.text :label="__('dashboard.name')" :id="'name'" :class="'form-control'"
-                            :name="'name'" :value="old('name', $question->name ?? '')" :isDisabled="true" :requiredMessage="__('dashboard.name_is_required')" />
+                            :name="'name'" :value="old('name', $question->name ?? '')" :Disabled="true" :requiredMessage="__('dashboard.name_is_required')" />
                     </div>
                     <!-- END Name -->
                     <!-- Phone -->
                     <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
                         <x-dashboard.form.columns.text-area :id="''" :class="'form-control'" :name="'phone'"
-                            :isDisabled="true" :label="__('dashboard.phone')" :value="old('phone', $question->phone ?? '')" />
+                            :Disabled="true" :label="__('dashboard.phone')" :value="old('phone', $question->phone ?? '')" />
                     </div>
                     <!-- End Phone -->
                 </div>
                 <div class="form-group row">
                     <!-- Subject -->
                     <div class="col-12 col-sm-12 col-md-5 col-lg-4">
-                        <x-dashboard.form.columns.url :id="'subject'" :class="'form-control'" :name="'subject'"
-                            :label="__('dashboard.subject')" :value="old('subject', $question->subject ?? '')" :isDisabled="true" />
+                        <x-dashboard.form.columns.text-area :id="'subject'" :class="'form-control'" :name="'subject'"
+                            :label="__('dashboard.subject')" :value="old('subject', $question->subject ?? '')" :Disabled="true" />
+                    </div>
+                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
+                        <x-dashboard.form.columns.text-area :id="''" :class="'form-control'" :name="'message'"
+                            :Disabled="true" :label="__('dashboard.message')" :value="old('message', $question->message ?? '')" />
                     </div>
                     <!-- End Subject -->
                 </div>
                 <div class="form-group row">
-                    <!-- Message -->
-                    <div class="col-12 col-sm-12 col-md-5 col-lg-4">
-                        <x-dashboard.form.columns.text-area :id="''" :class="'form-control'" :name="'message'"
-                            :isDisabled="true" :label="__('dashboard.message')" :value="old('message', $question->message ?? '')" />
-                    </div>
-                    <!-- END Message -->
                     <!-- Answer -->
-                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
-                        <x-dashboard.form.columns.time :id="'answer'" :class="'form-control'" :name="'answer'"
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4">
+                        <x-dashboard.form.columns.text-area :id="''" :class="'form-control'" :name="'answer'"
                             :isRequired="true" :requiredMessage="__('dashboard.answer_is_required')" :label="__('dashboard.answer')" :value="old('answer', $question->answer ?? '')" />
                     </div>
                     <!-- END Answer -->

@@ -90,7 +90,7 @@
                                     <a href="#events">Events</a>
                                 </li>
                                 <li>
-                                    <a href="#events">Press</a>
+                                    <a href="{{ route('press.index') }}">Press</a>
                                 </li>
                                 <li><a href="#footer">Contact us</a></li>
                             </ul>

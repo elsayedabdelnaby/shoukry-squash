@@ -6,15 +6,25 @@
         </div>
         <!--Appointment Form-->
         <div class="appointment-form">
-            <form method="post" action="#">
+            <form action="{{ route('contactus') }}" method="POST" >
+                    @csrf
                 <div class="form-group">
-                    <input type="text" name="text" placeholder="Name" />
+                    <input type="text" name="name" placeholder="Full Name *"  required isDisabled="true"
+                                        requiredMessage="__('dashboard.name_is_required')"/>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="contact" placeholder="Email Or Phone" />
+                    <input type="text" name="phone_number"  placeholder="Phone *" required isDisabled="true"
+                                        requiredMessage="__('dashboard.phone_number_is_required')"/>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="subject"  placeholder="Subject *" required isDisabled="true"
+                                        requiredMessage="__('dashboard.subject_is_required')"/>
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="Message" rows="5"></textarea>
+                    <textarea name="message"  rows="4" placeholder="Message *"
+                                    required isDisabled="true"
+                                        requiredMessage="__('dashboard.message_is_required')"></textarea>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="theme-btn style-two">

@@ -55,6 +55,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}" />
     <!-- Main Style -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css?v=1.0.0.3') }}" />
+
+    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}" />
     @yield('head')
 </head>
 
@@ -79,8 +81,13 @@
 
         @yield('content')
 
+        <!-- footer area start -->
+        @include('sections.footer')
+        <!-- footer area end -->
+
     </div>
     <!-- Jquery -->
+
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <!-- Bootstrap -->
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
@@ -102,6 +109,22 @@
     <script src="{{ asset('assets/js/aos.js') }}"></script>
     <!-- Custom script -->
     <script src="{{ asset('assets/js/script.js?v=1.0.0.3') }}"></script>
+
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+
+    <script>
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @endif
+
+        @if (Session::has('info'))
+            toastr.info("{{ Session::get('info') }}");
+        @endif
+
+        @if (Session::has('error'))
+            toastr.error("{{ Session::get('error') }}");
+        @endif
+    </script>
     @yield('javascript')
 </body>
 

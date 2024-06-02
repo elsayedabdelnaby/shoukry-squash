@@ -3,16 +3,20 @@
 use App\Http\Middleware\Web;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\EventsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\CoachController;
 use App\Http\Controllers\Dashboard\CourtController;
 use App\Http\Controllers\Dashboard\EventController;
+use App\Http\Controllers\Dashboard\GalleryController;
 use App\Http\Controllers\Dashboard\BranchController;
 use App\Http\Controllers\Dashboard\MissionController;
 use App\Http\Controllers\Dashboard\PackageController;
 use App\Http\Controllers\Dashboard\QuestionController;
 use App\Http\Controllers\Dashboard\ObjectiveController;
+use App\Http\Controllers\Dashboard\PressController;
+use App\Http\Controllers\Web\WebPressController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -34,6 +38,11 @@ Route::group(
     function () {
         Route::middleware([Web::class])->group(function () {
             Route::get('/', [HomeController::class, 'index'])->name('home');
+            Route::get('/events', [EventsController::class, 'index'])->name('events');
+            Route::get('/events/{event}', [EventsController::class, 'show'])->name('events_details');
+            Route::get('/press', [WebPressController::class, 'index'])->name('press.index');
+            Route::get('/press/{slug}', [WebPressController::class, 'show'])->name('press_details');
+            Route::post('/contact-us',  [HomeController::class, 'contactus'])->name('contactus');
         });
 
         Route::prefix("dashboard")->group(function () {
@@ -117,12 +126,31 @@ Route::group(
                     Route::delete('{event}', 'destroy')->name('destroy');
                 });
 
+                //press
+                Route::name('press.')->prefix('press')->controller(PressController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{press}/edit', 'edit')->name('edit');
+                    Route::put('{press}/update', 'update')->name('update');
+                    Route::delete('{press}', 'destroy')->name('destroy');
+                });
+
+                //events
+                Route::name('gallery.')->prefix('gallery')->controller(GalleryController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{gallery}/edit', 'edit')->name('edit');
+                    Route::put('{gallery}/update', 'update')->name('update');
+                    Route::delete('{gallery}', 'destroy')->name('destroy');
+                });
                 //questions
                 Route::name('questions.')->prefix('questions')->controller(QuestionController::class)->group(function () {
                     Route::get('', 'index')->name('index');
-                    Route::get('{objective}/edit', 'edit')->name('edit');
-                    Route::put('{objective}/update', 'update')->name('update');
-                    Route::delete('{objective}', 'destroy')->name('destroy');
+                    Route::get('{question}/edit', 'edit')->name('edit');
+                    Route::put('{question}/update', 'update')->name('update');
+                    Route::delete('{question}', 'destroy')->name('destroy');
                 });
             });
         });

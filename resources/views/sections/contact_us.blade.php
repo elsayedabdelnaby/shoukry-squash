@@ -10,28 +10,35 @@
                             GET IN TOUCH!
                         </h2>
                     </div>
-                    <form class="contactForm">
+                    <form class="contactForm" action="{{ route('contactus') }}" method="POST" >
+                    @csrf
                         <div class="row gap-20">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input type="text" name="name" class="form-control"
-                                        placeholder="Full Name *" />
+                                        placeholder="Full Name *"  required isDisabled="true"
+                                        requiredMessage="__('dashboard.name_is_required')"  />
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input type="text" name="phone_number" class="form-control"
-                                        placeholder="Phone *" />
+                                        placeholder="Phone *" required isDisabled="true"
+                                        requiredMessage="__('dashboard.phone_number_is_required')" />
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" name="subject" class="form-control" placeholder="Subject *" />
+                                    <input type="text" name="subject" class="form-control" placeholder="Subject *"
+                                    required isDisabled="true"
+                                        requiredMessage="__('dashboard.subject_is_required')"/>
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" rows="4" placeholder="Message *"></textarea>
+                                    <textarea name="message" class="form-control" rows="4" placeholder="Message *"
+                                    required isDisabled="true"
+                                        requiredMessage="__('dashboard.message_is_required')"></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-12">

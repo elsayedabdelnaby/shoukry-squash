@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('event_posters', function (Blueprint $table) {
+        Schema::create('press', function (Blueprint $table) {
             $table->id();
-            $table->string('poster');
-            $table->unsignedBigInteger('event_id');
+            $table->string('title');
+            $table->string('slug');
+            $table->string('image_card');
+            $table->string('main_image');
+            $table->string('video_url');
+            $table->boolean('show_in_home_page')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('event_posters');
+        Schema::dropIfExists('press');
     }
 };

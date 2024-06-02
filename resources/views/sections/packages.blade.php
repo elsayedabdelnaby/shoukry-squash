@@ -5,7 +5,7 @@
                 <div class="section-title text-center mb-85" data-aos="fade-up" data-aos-duration="1500"
                     data-aos-offset="50">
                     <span class="sub-title mb-10">Packages</span>
-                    <h2>Academy Has A Wonderful Package</h2>
+                    <h2>Sign up for one of our tailored packages</h2>
                 </div>
             </div>
         </div>

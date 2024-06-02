@@ -25,7 +25,7 @@ class QuestionController extends Controller
 
     public function update(Request $request, Question $question)
     {
-        $question->status = $request->status;
+        $question->status = 'closed';
         $question->answer = $request->answer;
         $question->save();
         return redirect('dashboard/questions')
