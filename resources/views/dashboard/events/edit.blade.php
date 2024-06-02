@@ -65,7 +65,7 @@
                                 class="col-md-4 col-xl-4 col-lg-4 col-form-label text-left">{{ __('dashboard.image_card') }}</label>
                             <div class="col-md-8 col-lg-8 col-xl-8">
                                 <div class="image-input image-input-empty image-input-outline"
-                                    style="background-image: url('{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}')"
+                                    style="background-image: url('{{ $event->image_card_url ?? asset('public/metronic/assets/media/users/blank.png') }}')"
                                     id="image_card">
                                     <div class="image-input-wrapper"></div>
                                     <label
@@ -101,7 +101,7 @@
                                 class="col-md-4 col-xl-4 col-lg-4 col-form-label text-left">{{ __('dashboard.main_image') }}</label>
                             <div class="col-md-8 col-lg-8 col-xl-8">
                                 <div class="image-input image-input-empty image-input-outline"
-                                    style="background-image: url('{{ $event->main_image_url ?? asset('metronic/assets/media/users/blank.png') }}')"
+                                    style="background-image: url('{{ $event->main_image_url ?? asset('public/metronic/assets/media/users/blank.png') }}')"
                                     id="main_image">
                                     <div class="image-input-wrapper"></div>
                                     <label
@@ -157,12 +157,12 @@
 
 @push('javascript')
     <!-- Form Parsley Validation -->
-    <script src="{{ asset('metronic/assets/plugins/parsley/parsley.min.js') }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/parsley/parsley.min.js')) }}"></script>
     <!--end::Form Parsley Validation-->
     <!-- Form JS -->
     <script src="{{ asset('js/form.js') }}"></script>
-    <script src="{{ asset('metronic/assets/plugins/custom/jquery-image-uploader/image-uploader.min.js') }}"></script>
-    <script src="{{ asset('metronic/assets/plugins/custom/uppy/uppy.bundle.js') }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/custom/jquery-image-uploader/image-uploader.min.js')) }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/custom/uppy/uppy.bundle.js')) }}"></script>
     <!--end::Form JS-->
     <script>
         var posters = {!! json_encode($posters) !!};

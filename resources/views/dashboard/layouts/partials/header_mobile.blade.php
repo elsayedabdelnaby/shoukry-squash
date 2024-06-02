@@ -1,7 +1,7 @@
 <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
     <!--begin::Logo-->
     <a href="{{ route('dashboard.home') }}">
-        <img alt="Logo" src="{{ asset('metronic/assets/media/logos/logo-light.png') }}" />
+        <img alt="Logo" src="{{ url(asset('public/metronic/assets/media/logos/logo-light.png')) }}" />
     </a>
     <!--end::Logo-->
     <!--begin::Toolbar-->

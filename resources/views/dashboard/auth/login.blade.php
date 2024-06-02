@@ -13,24 +13,28 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
     <!--begin::Page Custom Styles(used by this page)-->
-    <link href="{{ asset('metronic/assets/css/pages/login/classic/login-5.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/dashboard/custom.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url(asset('public/metronic/assets/css/pages/login/classic/login-5.css')) }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ url(asset('css/dashboard/custom.css')) }}" rel="stylesheet" type="text/css" />
     <!--end::Page Custom Styles-->
     <!--begin::Global Theme Styles(used by all pages)-->
-    <link href="{{ asset('metronic/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('metronic/assets/plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet"
+    <link href="{{ url(asset('public/metronic/assets/plugins/global/plugins.bundle.css')) }}" rel="stylesheet"
         type="text/css" />
-    <link href="{{ asset('metronic/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url(asset('public/metronic/assets/plugins/custom/prismjs/prismjs.bundle.css')) }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ url(asset('public/metronic/assets/css/style.bundle.css')) }}" rel="stylesheet" type="text/css" />
     <!--end::Global Theme Styles-->
     <!--begin::Layout Themes(used by all pages)-->
-    <link href="{{ asset('metronic/assets/css/themes/layout/header/base/light.css') }}" rel="stylesheet"
+    <link href="{{ url(asset('public/metronic/assets/css/themes/layout/header/base/light.css')) }}" rel="stylesheet"
         type="text/css" />
-    <link href="{{ asset('metronic/assets/css/themes/layout/header/menu/light.css') }}" rel="stylesheet"
+    <link href="{{ url(asset('public/metronic/assets/css/themes/layout/header/menu/light.css')) }}" rel="stylesheet"
         type="text/css" />
-    <link href="{{ asset('metronic/assets/css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('metronic/assets/css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url(asset('public/metronic/assets/css/themes/layout/brand/dark.css')) }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ url(asset('public/metronic/assets/css/themes/layout/aside/dark.css')) }}" rel="stylesheet"
+        type="text/css" />
     <!--end::Layout Themes-->
-    <link rel="shortcut icon" href="{{ asset('metronic/assets/media/logos/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ url(asset('public/metronic/assets/media/logos/favicon.ico')) }}" />
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -42,13 +46,13 @@
         <!--begin::Login-->
         <div class="login login-5 login-signin-on d-flex flex-row-fluid" id="kt_login">
             <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid"
-                style="background-image: url({{ asset('metronic/assets/media/bg/bg-2.jpg') }});">
+                style="background-image: url({{ url(asset('public/metronic/assets/media/bg/bg-2.jpg')) }});">
                 <div class="login-form text-center text-white p-7 position-relative overflow-hidden">
                     <!--begin::Login Header-->
                     <div class="d-flex flex-center mb-15">
                         <a href="#">
-                            <img src="{{ asset('metronic/assets/media/logos/logo-letter-13.png') }}" class="max-h-75px"
-                                alt="" />
+                            <img src="{{ url(asset('public/metronic/assets/media/logos/logo-letter-13.png')) }}"
+                                class="max-h-75px" alt="" />
                         </a>
                     </div>
                     <!--end::Login Header-->
@@ -101,15 +105,15 @@
     </div>
     <!--end::Main-->
     <!--begin::Global Theme Bundle(used by all pages)-->
-    <script src="{{ asset('metronic/assets/plugins/global/plugins.bundle.js') }}"></script>
-    <script src="{{ asset('metronic/assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
-    <script src="{{ asset('metronic/assets/js/scripts.bundle.js') }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/global/plugins.bundle.js')) }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/custom/prismjs/prismjs.bundle.js')) }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/js/scripts.bundle.js')) }}"></script>
     <!--end::Global Theme Bundle-->
     <!--begin::Page Scripts(used by this page)-->
-    <script src="{{ asset('metronic/assets/js/pages/custom/login/login-general.js') }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/js/pages/custom/login/login-general.js')) }}"></script>
     <!--end::Page Scripts-->
     <!-- Form Parsley Validation -->
-    <script src="{{ asset('metronic/assets/plugins/parsley/parsley.min.js') }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/parsley/parsley.min.js')) }}"></script>
     <!--end::Form Parsley Validation-->
     <!-- Form JS -->
     <script src="{{ asset('js/form.js') }}"></script>

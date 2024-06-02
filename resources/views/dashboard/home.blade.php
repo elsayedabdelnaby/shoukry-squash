@@ -5,7 +5,7 @@
 @endsection
 
 @section('head-css')
-    <link href="{{ asset('metronic/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
+    <link href="{{ url(asset('public/metronic/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')) }}" rel="stylesheet"
         type="text/css" />
 @endsection
 
@@ -23,6 +23,6 @@
 @endsection
 
 @push('javascript')
-    <script src="{{ asset('metronic/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
-    <script src="{{ asset('metronic/assets/js/pages/widgets.js') }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js')) }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/js/pages/widgets.js')) }}"></script>
 @endpush

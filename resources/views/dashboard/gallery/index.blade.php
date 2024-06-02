@@ -3,7 +3,7 @@
 @section('title', __('dashboard.gallery'))
 
 @section('head-css')
-    <link href="{{ asset('metronic/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
+    <link href="{{ url(asset('public/metronic/assets/plugins/custom/datatables/datatables.bundle.css')) }}" rel="stylesheet"
         type="text/css" />
 @endsection
 
@@ -73,8 +73,8 @@
                                 {{ $image->id }}
                             </td>
                             <td>
-                                
-                               <img src="{{ $image->image_url ?? asset('metronic/assets/media/users/blank.png') }}" style="max-width:10%">
+
+                               <img src="{{ $image->image_url ?? asset('public/metronic/assets/media/users/blank.png') }}" style="max-width:10%">
                             </td>
                             <td>
                                 <a href="{{ route('dashboard.gallery.edit', ['gallery' => $image]) }}"
@@ -102,5 +102,5 @@
 @endsection
 
 @push('javascript')
-    <script src="{{ asset('metronic/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/custom/datatables/datatables.bundle.js')) }}"></script>
 @endpush

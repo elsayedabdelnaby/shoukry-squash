@@ -14,13 +14,15 @@
     @yield('head-css')
     <!--end::Page Vendors Styles-->
     <!--begin::Global Theme Styles(used by all pages)-->
-    <link href="{{ asset('metronic/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('metronic/assets/plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet"
+    <link href="{{ url(asset('public/metronic/assets/plugins/global/plugins.bundle.css')) }}" rel="stylesheet"
         type="text/css" />
-    <link href="{{ asset('metronic/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url(asset('public/metronic/assets/plugins/custom/prismjs/prismjs.bundle.css')) }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ url(asset('public/metronic/assets/css/style.bundle.css')) }}" rel="stylesheet" type="text/css" />
     <!--end::Global Theme Styles-->
     <!--begin::Layout Themes(used by all pages)-->
-    <link href="{{ asset('metronic/assets/css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url(asset('public/metronic/assets/css/themes/layout/brand/dark.css')) }}" rel="stylesheet"
+        type="text/css" />
     <!--end::Layout Themes-->
 </head>
 <!--end::Head-->
@@ -38,9 +40,9 @@
     </div>
     <!--end::Global Config-->
     <!--begin::Global Theme Bundle(used by all pages)-->
-    <script src="{{ asset('metronic/assets/plugins/global/plugins.bundle.js') }}"></script>
-    <script src="{{ asset('metronic/assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
-    <script src="{{ asset('metronic/assets/js/scripts.bundle.js') }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/global/plugins.bundle.js')) }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/custom/prismjs/prismjs.bundle.js')) }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/js/scripts.bundle.js')) }}"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
     <!--end::Global Theme Bundle-->
     <!--begin::Page Scripts(used by this page)-->

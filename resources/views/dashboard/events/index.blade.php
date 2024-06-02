@@ -3,7 +3,7 @@
 @section('title', __('dashboard.events'))
 
 @section('head-css')
-    <link href="{{ asset('metronic/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
+    <link href="{{ url(asset('public/metronic/assets/plugins/custom/datatables/datatables.bundle.css')) }}" rel="stylesheet"
         type="text/css" />
 @endsection
 
@@ -109,5 +109,5 @@
 @endsection
 
 @push('javascript')
-    <script src="{{ asset('metronic/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/custom/datatables/datatables.bundle.js')) }}"></script>
 @endpush
