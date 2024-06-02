@@ -3,7 +3,7 @@
 @section('content')
     <!-- Page Banner Start -->
     <section class="page-banner-area overlay py-170 rpy-120 rel z-1 bgs-cover text-center"
-        style="background-image: url({{ $press->main_image_url ?? asset('assets/images/background/banner-two.jpg') }})">
+        style="background-image: url({{ url($press->main_image_url) ?? url(asset('assets/images/background/banner-two.jpg')) }})">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-10">
@@ -39,7 +39,7 @@
             <div class="row gap-70">
                 <div class="col-lg-12">
                     <div class="blog-details-image" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
-                        <img src="{{ $press->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}"
+                        <img src="{{ url($press->image_card_url) ?? url(asset('metronic/assets/media/users/blank.png')) }}"
                             alt="Event Details" />
                     </div>
                     <div class="blog-details-content">
@@ -62,7 +62,7 @@
 
                                 @foreach ($press->posters as $poster)
                                     <a href="{{ $poster->poster_url }}">
-                                        <img src="{{ $poster->poster_url }}" alt="Gallery" />
+                                        <img src="{{ url($poster->poster_url) }}" alt="Gallery" />
                                         <i class="far fa-plus"></i>
                                     </a>
                                 @endforeach

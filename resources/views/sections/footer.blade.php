@@ -6,7 +6,7 @@
                 <div class="col-xl-4 col-lg-3">
                     <div class="footer-logo mb-45 rmb-25">
                         <a href="#">
-                            <img width="150" height="auto" src="{{ asset('assets/images/brand/logo-300.png') }}"
+                            <img width="150" height="auto" src="{{ url(asset('assets/images/brand/logo-300.png')) }}"
                                 alt="Shoukry Squash Academy" />
                         </a>
                     </div>
@@ -14,9 +14,9 @@
                 <div class="col-xl-8 col-lg-9 text-lg-end">
                     <div class="footer-clients mb-30 rmb-10">
                         <div class="clients">
-                            <img src="{{ asset('assets/images/footer/client1.jpg') }}" alt="Client" />
-                            <img src="{{ asset('assets/images/footer/client2.jpg') }}" alt="Client" />
-                            <img src="{{ asset('assets/images/footer/client3.jpg') }}" alt="Client" />
+                            <img src="{{ url(asset('assets/images/footer/client1.jpg')) }}" alt="Client" />
+                            <img src="{{ url(asset('assets/images/footer/client2.jpg')) }}" alt="Client" />
+                            <img src="{{ url(asset('assets/images/footer/client3.jpg')) }}" alt="Client" />
                         </div>
                         <h5>
                             Have Questions ? Call
@@ -48,8 +48,8 @@
                         <h5 class="footer-title">Latest Gallery</h5>
                         <div class="gallery">
                             @foreach ($general_settings['gallery'] as $image)
-                                <a href="{{ $image->image_url }}">
-                                    <img src="{{ $image->image_url }}" alt="Gallery" />
+                                <a href="{{ url($image->image_url) }}">
+                                    <img src="{{ url($image->image_url) }}" alt="Gallery" />
                                     <i class="far fa-plus"></i>
                                 </a>
                             @endforeach

@@ -43,7 +43,7 @@
                 <div class="logo-outer">
                     <div class="logo">
                         <a href="#">
-                            <img src="{{ asset('assets/images/brand/logo-300.png') }}" alt="Shoukry Squash Academy"
+                            <img src="{{ url(asset('assets/images/brand/logo-300.png')) }}" alt="Shoukry Squash Academy"
                                 title="Shoukry Squash Academy" />
                         </a>
                     </div>
@@ -55,7 +55,7 @@
                         <div class="navbar-header py-10">
                             <div class="mobile-logo">
                                 <a href="{{ route('home') }}">
-                                    <img width="70" src="{{ asset('assets/images/brand/logo-300.png') }}"
+                                    <img width="70" src="{{ url(asset('assets/images/brand/logo-300.png')) }}"
                                         alt="Shoukry Squash Academy" title="Shoukry Squash Academy" />
                                 </a>
                             </div>
@@ -75,24 +75,24 @@
                                     <a href="{{ route('home') }}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="#about">About</a>
+                                    <a href="{{ route('home') }}#about">About</a>
                                 </li>
                                 <li>
-                                    <a href="#branches">Branches</a>
+                                    <a href="{{ route('home') }}#branches">Branches</a>
                                 </li>
                                 <li>
-                                    <a href="#team">Team</a>
+                                    <a href="{{ route('home') }}#team">Team</a>
                                 </li>
                                 <li>
-                                    <a href="#pricing">Packages</a>
+                                    <a href="{{ route('home') }}#pricing">Packages</a>
                                 </li>
                                 <li>
-                                    <a href="#events">Events</a>
+                                    <a href="{{ route('home') }}#events">Events</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('press.index') }}">Press</a>
                                 </li>
-                                <li><a href="#footer">Contact us</a></li>
+                                <li><a href="{{ route('home') }}#footer">Contact us</a></li>
                             </ul>
                         </div>
                     </nav>

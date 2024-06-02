@@ -3,7 +3,7 @@
 @section('content')
     <!-- Page Banner Start -->
     <section class="page-banner-area overlay py-170 rpy-120 rel z-1 bgs-cover text-center"
-        style="background-image: url({{ asset('assets/images/background/banner-two.jpg') }})">
+        style="background-image: url({{ url(asset('assets/images/background/banner-two.jpg')) }})">
         <div class="container">
             <div class="banner-inner pt-70 rpt-50 text-white">
                 <h2 class="page-title" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
@@ -34,7 +34,7 @@
                                 data-aos-offset="50">
                                 <div class="image">
                                     <span class="date">{{ date('d M', strtotime($event->date)) }}</span>
-                                    <img src="{{ $event->main_image_url ?? asset('metronic/assets/media/users/blank.png') }}"
+                                    <img src="{{ url($event->main_image_url) ?? url(asset('metronic/assets/media/users/blank.png')) }}"
                                         alt="Blog" />
                                 </div>
                                 <div class="content">

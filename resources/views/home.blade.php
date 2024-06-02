@@ -4,7 +4,7 @@
     <!-- Slider Section Start -->
     <section class="main-slider-area rel z-1">
         <div class="main-slider-active">
-            <div class="slider-item" style="background-image: url({{ asset('assets/images/slider/bg-main.jpg') }})">
+            <div class="slider-item" style="background-image: url({{ url(asset('assets/images/slider/bg-main.jpg')) }})">
                 <div class="container">
                     <div class="slide-content" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                         <span class="sub-title"> Shoukry Premium Squash Club </span>

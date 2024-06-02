@@ -30,7 +30,7 @@
                         @endphp
                         <div class="image">
                             <span class="date">{{ $eventDate->format('d F') }}</span>
-                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}"
+                            <img src="{{ url($event->image_card_url) ?? url(asset('metronic/assets/media/users/blank.png')) }}"
                                 alt="title" />
                         </div>
                         <div class="content">
@@ -63,7 +63,7 @@
                         @endphp
                         <div class="image">
                             <span class="date">{{ $eventDate->format('d F') }}</span>
-                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}"
+                            <img src="{{ url($event->image_card_url) ?? url(asset('metronic/assets/media/users/blank.png')) }}"
                                 alt="title" />
                         </div>
                         <div class="content">
@@ -92,7 +92,7 @@
                 <div class="col-xl-4 col-md-6 item press">
                     <div class="blog-item">
                         <div class="image">
-                            <img src="{{ $record->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}"
+                            <img src="{{ url($record->image_card_url) ?? url(asset('metronic/assets/media/users/blank.png')) }}"
                                 alt="title" />
                         </div>
 

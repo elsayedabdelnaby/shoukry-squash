@@ -1,5 +1,5 @@
 <section class="team-area pt-130 rpt-100 pb-45 rpb-15 bgs-cover rel z-1 px-lg-0 px-3"
-    style="background-image: url({{ asset('assets/images/background/bg3.webp') }})" id="team">
+    style="background-image: url({{ url(asset('assets/images/background/bg3.webp')) }})" id="team">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-lg-10">
@@ -15,7 +15,7 @@
                 <div class="team-member" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1500"
                     data-aos-offset="50">
                     <div class="image">
-                        <img src="assets/images/team/team1.jpg" alt="Shoukry Squash Academy" />
+                        <img src="{{ url(asset('assets/images/team/team1.jpg')) }}" alt="Shoukry Squash Academy" />
                     </div>
                     <div class="content">
                         <h6>Shoukry Ahmed</h6>

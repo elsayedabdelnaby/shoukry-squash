@@ -4,7 +4,7 @@
         <div class="row gap-90">
             <div class="col-xl-6">
                 <div class="about-image mt-55" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
-                    <img src="{{ asset('assets/images/about/about1.jpg') }}" alt="Shoukry Squash Academy" />
+                    <img src="{{ url(asset('assets/images/about/about1.jpg')) }}" alt="Shoukry Squash Academy" />
                     <div class="circle-progress-wrap">
                         <div class="progress-content">
                             <h6>Members Satisfaction</h6>
@@ -24,7 +24,7 @@
                             <div class="service-item-two">
                                 <div class="icon">
                                     <img width="70" height="auto"
-                                        src="{{ asset('./assets/images/icons/mission.svg') }}"
+                                        src="{{ url(asset('./assets/images/icons/mission.svg')) }}"
                                         alt="Shoukry Academy Mission" />
                                 </div>
                                 <h6>
@@ -43,7 +43,7 @@
                             <div class="service-item-two">
                                 <div class="icon">
                                     <img width="70" height="auto"
-                                        src="{{ asset('./assets/images/icons/vision.svg') }}"
+                                        src="{{ url(asset('./assets/images/icons/vision.svg')) }}"
                                         alt="Shoukry Academy Mission" />
                                 </div>
                                 <h6>
