@@ -155,6 +155,16 @@
                     </a>
                 </li>
 
+                <li class="menu-item {{ request()->routeIs('dashboard.press.*') ? 'menu-item-active' : null }}"
+                    aria-haspopup="true">
+                    <a href="{{ route('dashboard.press.index') }}" class="menu-link">
+                        <i class="menu-bullet menu-bullet-line">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">{{ __('dashboard.press') }}</span>
+                    </a>
+                </li>
+
                 {{--
                 <li class="menu-item {{ request()->routeIs('dashboard.salary-report') ? 'menu-item-active' : null }}"
                     aria-haspopup="true">

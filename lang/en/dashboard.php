@@ -122,4 +122,12 @@ return [
     'event_created_successfully' => 'Event Created Successfully',
     'description_is_required' => 'Description is required',
     'event_updated_successfully' => 'Event Updated Sccuessfully',
+    'press_created_successfully' => 'Press Created Successfully',
+    'press_updated_successfully' => 'Press Updated Sccuessfully',
+    'press' => 'Press',
+    'new_press' => 'New Press',
+    'enter_press_details_and_submit' => 'Enter Press Details and Submit',
+    'edit_press' => 'Edit Press',
+    'video_url' => 'Video URL',
+    
 ];

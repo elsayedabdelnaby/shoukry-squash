@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Coach;
 use App\Models\Gallery;
 use App\Models\Event;
+use App\Models\Press;
 use App\Models\Question;
 use Illuminate\Http\Request;
 
@@ -18,9 +19,9 @@ class HomeController extends Controller
     public function index()
     {
         $missions = Mission::orderBy('id')->get();
-        $gallery = Gallery::orderBy('id')->get();
         $objectives = Objective::orderBy('id')->get();
         $events = Event::where('show_in_home_page', true)->limit(10)->get();
+        $press = Press::where('show_in_home_page', true)->limit(10)->get();
         $upComingEvents = Event::where('date', '>=', date('Y-m-d'))
             ->where('show_in_home_page', true)
             ->orderBy('date', 'asc')
@@ -29,10 +30,10 @@ class HomeController extends Controller
         return view('home')->with([
             'missions' => $missions,
             'objectives' => $objectives,
-            'gallery' => $gallery,
             'branches' => Branch::all(),
             'packages' => Package::all(),
             'events' => $events,
+            'press' => $press,
             'upComingEvents' => $upComingEvents,
             'coaches' => $coaches
         ]);

@@ -2,24 +2,24 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Event;
+use App\Models\Press;
+use App\Models\EventPoster;
 use Illuminate\Http\Request;
 use App\Services\FileService;
 use App\Http\Controllers\Controller;
-use App\Models\EventPoster;
 
-class EventController extends Controller
+class PressController extends Controller
 {
     public function index(Request $request)
     {
-        $events = Event::all();
-        return view('dashboard.events.index', compact('events'));
+        $press = Press::all();
+        return view('dashboard.press.index', compact('press'));
     }
 
     public function create(Request $request)
     {
-        return view('dashboard.events.edit')->with([
-            'action' => route('dashboard.events.store'),
+        return view('dashboard.press.edit')->with([
+            'action' => route('dashboard.press.store'),
             'method' => 'POST',
             'posters' => [],
         ]);
@@ -27,68 +27,66 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
-        $images = $this->uploadedFiles($request, Event::$storagePath);
-        $event = new Event();
-        $event->title = $request->title;
-        $event->description = $request->description;
-        $event->image_card = $images['image_card'];
-        $event->main_image = $images['main_image'];
-        $event->date = $request->date;
-        $event->show_in_home_page = $request->get("show_in_home_page") ? 1 : 0;
-        $event->save();
+        $images = $this->uploadedFiles($request, Press::$storagePath);
+        $press = new Press();
+        $press->title = $request->title;
+        $press->video_url = $request->video_url;
+        $press->image_card = $images['image_card'];
+        $press->main_image = $images['main_image'];
+        $press->show_in_home_page = $request->get("show_in_home_page") ? 1 : 0;
+        $press->save();
         foreach ($images['posters'] as $poster) {
             EventPoster::create([
                 'poster' => $poster,
-                'event_id' => $event->id
+                'event_id' => $press->id
             ]);
         }
-        return redirect('dashboard/events')
+        return redirect('dashboard/press')
             ->with(
                 'success',
-                __('dashboard.event_created_successfully')
+                __('dashboard.press_created_successfully')
             );
     }
 
-    public function edit(Request $request, Event $event)
+    public function edit(Request $request, Press $press)
     {
-        return view('dashboard.events.edit')->with([
-            'event' => $event,
+        return view('dashboard.press.edit')->with([
+            'press' => $press,
             'method' => 'PUT',
-            'action' => route('dashboard.events.update', ['event' => $event]),
-            'posters' => $event->posters()?->pluck('poster')->toArray(),
+            'action' => route('dashboard.press.update', ['press' => $press]),
+            'posters' => $press->posters()?->pluck('poster')->toArray(),
         ]);
     }
 
-    public function update(Request $request, Event $event)
+    public function update(Request $request, Press $press)
     {
-        $images = $this->uploadedFiles($request, Event::$storagePath, $event->id);
-        $event->title = $request->title;
-        $event->description = $request->description;
-        $event->image_card = $images['image_card'];
-        $event->main_image = $images['main_image'];
-        $event->date = $request->date;
-        $event->show_in_home_page = $request->get("show_in_home_page") ? 1 : 0;
-        $event->save();
+        $images = $this->uploadedFiles($request, Press::$storagePath, $press->id);
+        $press->title = $request->title;
+        $press->video_url = $request->video_url;
+        $press->image_card = $images['image_card'];
+        $press->main_image = $images['main_image'];
+        $press->show_in_home_page = $request->get("show_in_home_page") ? 1 : 0;
+        $press->save();
         foreach ($images['posters'] as $poster) {
             EventPoster::create([
                 'poster' => $poster,
-                'event_id' => $event->id
+                'event_id' => $press->id
             ]);
         }
-        return redirect('dashboard/events')
+        return redirect('dashboard/press')
             ->with(
                 'success',
-                __('dashboard.event_updated_successfully')
+                __('dashboard.press_updated_successfully')
             );
     }
 
-    public function destroy(Event $event)
+    public function destroy(Press $press)
     {
-        $event->delete();
-        return redirect('dashboard/events')
+        $press->delete();
+        return redirect('dashboard/press')
             ->with(
                 'success',
-                __('dashboard.event_deleted_successfully')
+                __('dashboard.press_deleted_successfully')
             );
     }
 
@@ -99,10 +97,10 @@ class EventController extends Controller
         $fileService = new FileService;
 
         if ($id) {
-            $event = Event::find($id);
-            $mainImage = $event->main_image ? $event->main_image : '';
-            $imageCard = $event->image_card ? $event->image_card : '';
-            $posters = $event->posters()->pluck('poster')->toArray();
+            $press = Press::find($id);
+            $mainImage = $press->main_image ? $press->main_image : '';
+            $imageCard = $press->image_card ? $press->image_card : '';
+            $posters = $press->posters()->pluck('poster')->toArray();
 
             if ($request->hasFile('main_image')) {
                 $mainImage = $fileService->verifyAndUploadFile($request->file('main_image'), $mainImage, 'public', $storagePath);
@@ -112,7 +110,7 @@ class EventController extends Controller
             }
 
             if ($request->hasFile('posters')) {
-                foreach ($event->posters()->pluck('poster')->toArray() as $poster) {
+                foreach ($press->posters()->pluck('poster')->toArray() as $poster) {
                     $fileService->deleteFile($poster, $storagePath);
                 }
             }

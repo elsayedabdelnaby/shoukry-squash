@@ -15,6 +15,8 @@ use App\Http\Controllers\Dashboard\MissionController;
 use App\Http\Controllers\Dashboard\PackageController;
 use App\Http\Controllers\Dashboard\QuestionController;
 use App\Http\Controllers\Dashboard\ObjectiveController;
+use App\Http\Controllers\Dashboard\PressController;
+use App\Http\Controllers\Web\WebPressController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -38,6 +40,8 @@ Route::group(
             Route::get('/', [HomeController::class, 'index'])->name('home');
             Route::get('/events', [EventsController::class, 'index'])->name('events');
             Route::get('/events/{event}', [EventsController::class, 'show'])->name('events_details');
+            Route::get('/press', [WebPressController::class, 'index'])->name('press.index');
+            Route::get('/press/{slug}', [WebPressController::class, 'show'])->name('press_details');
             Route::post('/contact-us',  [HomeController::class, 'contactus'])->name('contactus');
         });
 
@@ -122,6 +126,15 @@ Route::group(
                     Route::delete('{event}', 'destroy')->name('destroy');
                 });
 
+                //press
+                Route::name('press.')->prefix('press')->controller(PressController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{press}/edit', 'edit')->name('edit');
+                    Route::put('{press}/update', 'update')->name('update');
+                    Route::delete('{press}', 'destroy')->name('destroy');
+                });
 
                 //events
                 Route::name('gallery.')->prefix('gallery')->controller(GalleryController::class)->group(function () {

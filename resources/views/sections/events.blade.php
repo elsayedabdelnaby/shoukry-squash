@@ -1,5 +1,5 @@
 @php
-use Carbon\Carbon;
+    use Carbon\Carbon;
 @endphp
 <!-- Event Area start -->
 <section class="blog-area pt-100 pb-100 rel px-lg-0 px-3" id="events">
@@ -30,26 +30,28 @@ use Carbon\Carbon;
                         @endphp
                         <div class="image">
                             <span class="date">{{ $eventDate->format('d F') }}</span>
-                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}" alt="title" />
+                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}"
+                                alt="title" />
                         </div>
                         <div class="content">
-                        <ul class="blog-meta">
-                            <li>
-                               <!-- <span>Discount</span> -->
-                            </li>
-                            <li>
-                                <i class="far fa-clock"></i>
-                                <a href="#">{{ $eventDate->format('d F, Y') }}</a>
-                            </li>
-                        </ul>
-                        <h5>
-                            <a href="{{ route('events_details', ['event' => $event->slug]) }}">{{ $event->title }}</a>
-                        </h5>
-                        <a class="read-more" href="{{ route('events_details', ['event' => $event->slug]) }}">
-                            Read More
-                            <i class="far fa-angle-double-right mirror-x-rtl"></i>
-                        </a>
-                    </div>
+                            <ul class="blog-meta">
+                                <li>
+                                    <!-- <span>Discount</span> -->
+                                </li>
+                                <li>
+                                    <i class="far fa-clock"></i>
+                                    <a href="#">{{ $eventDate->format('d F, Y') }}</a>
+                                </li>
+                            </ul>
+                            <h5>
+                                <a
+                                    href="{{ route('events_details', ['event' => $event->slug]) }}">{{ $event->title }}</a>
+                            </h5>
+                            <a class="read-more" href="{{ route('events_details', ['event' => $event->slug]) }}">
+                                Read More
+                                <i class="far fa-angle-double-right mirror-x-rtl"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             @endforeach
@@ -61,58 +63,54 @@ use Carbon\Carbon;
                         @endphp
                         <div class="image">
                             <span class="date">{{ $eventDate->format('d F') }}</span>
-                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}" alt="title" />
+                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}"
+                                alt="title" />
                         </div>
                         <div class="content">
-                        <ul class="blog-meta">
-                            <li>
-                               <!-- <span>Discount</span> -->
-                            </li>
-                            <li>
-                                <i class="far fa-clock"></i>
-                                <a href="#">{{ $eventDate->format('d F, Y') }}</a>
-                            </li>
-                        </ul>
-                        <h5>
-                            <a href="{{ route('events_details', ['event' => $event->slug]) }}">{{ $event->title }}</a>
-                        </h5>
-                        <a class="read-more" href="{{ route('events_details', ['event' => $event->slug]) }}">
-                            Read More
-                            <i class="far fa-angle-double-right mirror-x-rtl"></i>
-                        </a>
-                    </div>
+                            <ul class="blog-meta">
+                                <li>
+                                    <!-- <span>Discount</span> -->
+                                </li>
+                                <li>
+                                    <i class="far fa-clock"></i>
+                                    <a href="#">{{ $eventDate->format('d F, Y') }}</a>
+                                </li>
+                            </ul>
+                            <h5>
+                                <a
+                                    href="{{ route('events_details', ['event' => $event->slug]) }}">{{ $event->title }}</a>
+                            </h5>
+                            <a class="read-more" href="{{ route('events_details', ['event' => $event->slug]) }}">
+                                Read More
+                                <i class="far fa-angle-double-right mirror-x-rtl"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             @endforeach
-            @foreach ($events as $event)
+            @foreach ($press as $record)
                 <div class="col-xl-4 col-md-6 item press">
                     <div class="blog-item">
-                        @php
-                            $eventDate = new Carbon($event->date);
-                        @endphp
                         <div class="image">
-                            <span class="date">{{ $eventDate->format('d F') }}</span>
-                            <img src="{{ $event->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}" alt="title" />
+                            <img src="{{ $record->image_card_url ?? asset('metronic/assets/media/users/blank.png') }}"
+                                alt="title" />
                         </div>
 
-                    <div class="content">
-                        <ul class="blog-meta">
-                            <li>
-                               <!-- <span>Discount</span> -->
-                            </li>
-                            <li>
-                                <i class="far fa-clock"></i>
-                                <a href="#">{{ $eventDate->format('d F, Y') }}</a>
-                            </li>
-                        </ul>
-                        <h5>
-                            <a href="{{ route('events_details', ['event' => $event->slug]) }}">{{ $event->title }}</a>
-                        </h5>
-                        <a class="read-more" href="{{ route('events_details', ['event' => $event->slug]) }}">
-                            Read More
-                            <i class="far fa-angle-double-right mirror-x-rtl"></i>
-                        </a>
-                    </div>
+                        <div class="content">
+                            <ul class="blog-meta">
+                                <li>
+                                    <!-- <span>Discount</span> -->
+                                </li>
+                            </ul>
+                            <h5>
+                                <a
+                                    href="{{ route('press_details', ['slug' => $record->slug]) }}">{{ $record->title }}</a>
+                            </h5>
+                            <a class="read-more" href="{{ route('press_details', ['slug' => $record->slug]) }}">
+                                Read More
+                                <i class="far fa-angle-double-right mirror-x-rtl"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             @endforeach
