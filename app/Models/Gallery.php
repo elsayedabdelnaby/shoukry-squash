@@ -21,6 +21,6 @@ class Gallery extends Model
 
     protected function getImageUrlAttribute(): string|null
     {
-        return $this->image ? asset(Storage::url(self::$storagePath . '/' . $this->image)) : null;
+        return $this->image ? asset('public/' . Storage::url(self::$storagePath . '/' . $this->image)) : null;
     }
 }
