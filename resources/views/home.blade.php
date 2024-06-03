@@ -1,10 +1,13 @@
 @extends('layouts.app')
-
+@section('title', 'Shoukry Premium Squash Club')
+@section('meta_title', 'Shoukry Premium Squash Club')
+@section('meta_description', 'Shoukry Premium Squash Club, Elevate Your Game To A New Dimension and Quality Coaching You Trust')
 @section('content')
     <!-- Slider Section Start -->
     <section class="main-slider-area rel z-1">
         <div class="main-slider-active">
-            <div class="slider-item" style="background-image: url({{ url(asset('public/assets/images/slider/bg-main.jpg')) }})">
+            <div class="slider-item"
+                style="background-image: url({{ url(asset('public/assets/images/slider/bg-main.jpg')) }})">
                 <div class="container">
                     <div class="slide-content" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                         <span class="sub-title"> Shoukry Premium Squash Club </span>

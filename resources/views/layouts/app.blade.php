@@ -19,6 +19,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ar_AR" />
     <meta property="og:updated_time" content="123465789" />
+    <meta name="google-site-verification" content="YB3qRZbDcKhU86oVCSENBt1HhuXJOun7HITs7P7c-to" />
     <link rel="shortcut icon" href="{{ url(asset('public/assets/images/brand/logo-96.png')) }}" />
     <link rel="apple-touch-icon" sizes="57x57" href="{{ url(asset('public/assets/images/brand/logo-57.png')) }}" />
     <link rel="apple-touch-icon" sizes="60x60" href="{{ url(asset('public/assets/images/brand/logo-60.png')) }}" />
@@ -39,6 +40,7 @@
         href="{{ url(asset('public/assets/images/brand/logo-16.png')) }}" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="{{ url(asset('public/assets/images/brand/logo-144.png')) }}" />
+    <link rel="canonical" href="{{ url()->current() }}" />
     <link rel="mask-icon" href="{{ url(asset('public/assets/images/brand/logo-144.png')) }}" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&family=Poppins:wght@400;500;600&display=swap"
@@ -62,6 +64,25 @@
 
     <link rel="stylesheet" href="{{ url(asset('public/assets/css/toastr.min.css')) }}" />
     @yield('head')
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SportsOrganization",
+            "name": "Shoukry Premium Squash Club",
+            "description": "Shoukry Premium Squash Club, Elevate Your Game To A New Dimension and Quality Coaching You Trust",
+            "image": "{{ url(asset('public/assets/images/brand/og-v2.jpg')) }}",
+            "url": "https://shoukrysquashacademy.com/",
+            "publisher": "Elsayed Elaraby",
+            "author": "Elsayed Elaraby, +201013218568",
+            "datePublished": "2024-06-06",
+            "dateModified": "2024-06-06",
+            "mainEntityOfPage": "Home",
+            "telephone": "{{ $general_settings['phone_number'] }}",
+            "logo": "{{ url(asset('public/assets/images/brand/og-v2.jpg')) }}"
+        }
+    </script>
+
 </head>
 
 <body>
