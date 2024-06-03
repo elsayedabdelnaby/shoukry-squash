@@ -38,8 +38,22 @@
                     <!-- END Name -->
                     <!-- Branch -->
                     <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
-                        <x-dashboard.form.columns.select :id="'branch_id'" :name="'branch_id'" :label="__('dashboard.branch')"
-                            :options="$branches" :isMultiple="false" :defaultOptionName="__('dashboard.select_branch')" :selectedOption="old('branch_id', $court->branch_id ?? '')" />
+                        <div class="row">
+                            <label class="col-4 col-form-label font-weight-bold">{{ __('dashboard.branch') }}: </label>
+                            <div class="col-8">
+                                <select class="form-control" name="branch_id" id="branch_id" required
+                                    data-parsley-required-message="{{ __('dashboard.select_branch') }}">
+                                    <option value="">
+                                        {{ __('dashboard.select_branch') }}
+                                    </option>
+                                    @foreach ($branches as $option)
+                                        <option value="{{ $option->id }}" @selected($option->id == old('branch_id', $court->branch_id ?? ''))>
+                                            {{ $option->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <!-- End Branch -->
                 </div>
