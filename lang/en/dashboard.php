@@ -20,7 +20,7 @@ return [
     'working_to' => 'Working To',
     'actions' => 'Actions',
     'save' => 'Save',
-    'cancel' => 'Save',
+    'cancel' => 'Cancel',
     'edit_branch' => 'Edit Branch',
     'enter_branch_details_and_submit' => 'Enter Branch Details and Submit',
     'location' => 'Location',

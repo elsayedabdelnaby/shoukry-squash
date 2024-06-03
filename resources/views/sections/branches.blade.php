@@ -30,7 +30,7 @@
                         <p class="address">
                             <strong> Working Hours : </strong>
                             <span>
-                                Daily From {{ $branch->work_from }} AM to {{ $branch->work_to }} PM.
+                                Daily From {{ $branch->working_from }} AM to {{ $branch->working_to }} PM.
                             </span>
                         </p>
                         <div class="action mt-4">
