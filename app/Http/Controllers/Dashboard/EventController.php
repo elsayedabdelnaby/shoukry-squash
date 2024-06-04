@@ -115,6 +115,8 @@ class EventController extends Controller
                 foreach ($event->posters()->pluck('poster')->toArray() as $poster) {
                     $fileService->deleteFile($poster, $storagePath);
                 }
+            } else {
+                $posters = [];
             }
         } else {
             if ($request->hasFile('main_image')) {
