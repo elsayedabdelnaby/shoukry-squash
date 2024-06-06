@@ -30,7 +30,7 @@ class Press extends Model
 
     public function posters()
     {
-        return $this->hasMany(EventPoster::class, 'event_id');
+        return $this->hasMany(PressPoster::class, 'press_id');
     }
 
     /**

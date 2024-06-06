@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Press;
-use App\Models\EventPoster;
+use App\Models\PressPoster;
 use Illuminate\Http\Request;
 use App\Services\FileService;
 use App\Http\Controllers\Controller;
@@ -36,9 +36,9 @@ class PressController extends Controller
         $press->show_in_home_page = $request->get("show_in_home_page") ? 1 : 0;
         $press->save();
         foreach ($images['posters'] as $poster) {
-            EventPoster::create([
+            PressPoster::create([
                 'poster' => $poster,
-                'event_id' => $press->id
+                'press_id' => $press->id
             ]);
         }
         return redirect('dashboard/press')
@@ -68,9 +68,9 @@ class PressController extends Controller
         $press->show_in_home_page = $request->get("show_in_home_page") ? 1 : 0;
         $press->save();
         foreach ($images['posters'] as $poster) {
-            EventPoster::create([
+            PressPoster::create([
                 'poster' => $poster,
-                'event_id' => $press->id
+                'press_id' => $press->id
             ]);
         }
         return redirect('dashboard/press')
