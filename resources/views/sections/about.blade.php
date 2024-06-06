@@ -4,7 +4,7 @@
         <div class="row gap-90">
             <div class="col-xl-6">
                 <div class="about-image mt-55" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
-                    <img src="{{ url(asset('public/assets/images/about/about1.jpg')) }}" alt="Shoukry Squash Academy" />
+                    <img src="{{ url(asset('public/assets/images/about/2T1A2870.jpg')) }}" alt="Shoukry Squash Academy" />
                     <div class="circle-progress-wrap">
                         <div class="progress-content">
                             <h6>Members Satisfaction</h6>
