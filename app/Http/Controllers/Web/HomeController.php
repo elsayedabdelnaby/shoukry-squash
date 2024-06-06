@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
         $missions = Mission::orderBy('id')->get();
         $objectives = Objective::orderBy('id')->get();
-        $events = Event::where('show_in_home_page', true)->limit(10)->get();
+        $events = Event::where('show_in_home_page', true)->orderBy('id', 'asc')->limit(10)->get();
         $press = Press::where('show_in_home_page', true)->limit(10)->get();
         $upComingEvents = Event::where('date', '>=', date('Y-m-d'))
             ->where('show_in_home_page', true)
