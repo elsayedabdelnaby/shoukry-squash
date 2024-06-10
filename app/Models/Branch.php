@@ -15,6 +15,10 @@ class Branch extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'working_days' => 'array',
+    ];
+
 
     public function getActivitylogOptions(): LogOptions
     {

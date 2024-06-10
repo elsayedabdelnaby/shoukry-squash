@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Enums\WeekDay;
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
 use Illuminate\Http\Request;
@@ -19,6 +20,7 @@ class BranchController extends Controller
         return view('dashboard.branches.edit')->with([
             'action' => route('dashboard.branches.store'),
             'method' => 'POST',
+            'working_days' => WeekDay::cases()
         ]);
     }
 
@@ -30,6 +32,7 @@ class BranchController extends Controller
         $branch->location = $request->location;
         $branch->working_from = $request->working_from;
         $branch->working_to = $request->working_to;
+        $branch->working_days = implode(',', $request->input('working_days'));
         $branch->save();
         return redirect('dashboard/branches')
             ->with(
@@ -44,6 +47,7 @@ class BranchController extends Controller
             'branch' => $branch,
             'method' => 'PUT',
             'action' => route('dashboard.branches.update', ['branch' => $branch]),
+            'working_days' => WeekDay::cases()
         ]);
     }
 
@@ -54,6 +58,7 @@ class BranchController extends Controller
         $branch->location = $request->location;
         $branch->working_from = $request->working_from;
         $branch->working_to = $request->working_to;
+        $branch->working_days = implode(',', $request->input('working_days'));
         $branch->save();
         return redirect('dashboard/branches')
             ->with(

@@ -15,8 +15,8 @@
                     data-aos-offset="50">
                     <div class="service-item text-start">
                         <div class="icon">
-                            <img src="{{ url(asset('public/assets/images/icons/location.svg')) }}" width="65" height="65"
-                                alt="Shoukry Squash Academy" />
+                            <img src="{{ url(asset('public/assets/images/icons/location.svg')) }}" width="65"
+                                height="65" alt="Shoukry Squash Academy" />
                         </div>
                         <h5>
                             <a href="#">{{ $branch->name }} </a>
@@ -31,6 +31,12 @@
                             <strong> Working Hours : </strong>
                             <span>
                                 Daily From {{ $branch->working_from }} AM to {{ $branch->working_to }} PM.
+                            </span>
+                        </p>
+                        <p class="address">
+                            <strong> Working Days : </strong>
+                            <span>
+                                {{ $branch->working_days }}
                             </span>
                         </p>
                         <div class="action mt-4">

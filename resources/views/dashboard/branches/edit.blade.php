@@ -65,6 +65,26 @@
                     </div>
                     <!-- END To -->
                 </div>
+                <div class="form-group row">
+                    <!-- Working Days -->
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4">
+                        <div class="row">
+                            <label class="col-4 col-form-label font-weight-bold" for="working_days">Working Days</label>
+                            <div class="col-8">
+                                <select multiple class="form-control" id="working_days" name="working_days[]">
+                                    @foreach ($working_days as $day)
+                                        <option value="{{ $day }}"
+                                            @isset($branch)
+@selected(in_array($day->value, explode(',', $branch->working_days)))
+                                        @endisset>
+                                            {{ $day }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Working Days -->
+                </div>
             </div>
             <div class="card-footer">
                 <div class="row">

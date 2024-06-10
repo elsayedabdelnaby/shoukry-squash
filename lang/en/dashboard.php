@@ -129,5 +129,6 @@ return [
     'enter_press_details_and_submit' => 'Enter Press Details and Submit',
     'edit_press' => 'Edit Press',
     'video_url' => 'Video URL',
+    'working_days' => 'Working Days',
 
 ];

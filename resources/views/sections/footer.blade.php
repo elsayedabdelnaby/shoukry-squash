@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-8 col-sm-12">
                     <div class="footer-widget gallery-widget">
-                        <h5 class="footer-title">Latest Gallery</h5>
+                        <h5 class="footer-title">Sponsored By</h5>
                         <div class="gallery">
                             @foreach ($general_settings['gallery'] as $image)
                                 <a href="{{ url($image->image_url) }}">
