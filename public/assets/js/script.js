@@ -35,7 +35,7 @@
     ## Nice Select
     ## AOS Animation
     ## Preloader
-    
+
 -----------------------------------------------------------------------------------*/
 
 (function ($) {
@@ -596,6 +596,7 @@
     // ## Project Filter
     $(".project-active").imagesLoaded(function () {
       var items = $(".project-active").isotope({
+        layoutMode: "fitRows",
         itemSelector: ".item",
         filter: ".event",
         percentPosition: true,
