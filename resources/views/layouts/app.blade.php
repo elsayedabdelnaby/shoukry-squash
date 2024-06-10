@@ -133,7 +133,7 @@
     <!--  Aos Animation -->
     <script src="{{ url(asset('public/assets/js/aos.js')) }}"></script>
     <!-- Custom script -->
-    <script src="{{ url(asset('public/assets/js/script.js?v=1.0.0.3')) }}"></script>
+    <script src="{{ url(asset('public/assets/js/script.js?v=1.0.0.4')) }}"></script>
 
     <script src="{{ url(asset('public/assets/js/toastr.min.js')) }}"></script>
 
