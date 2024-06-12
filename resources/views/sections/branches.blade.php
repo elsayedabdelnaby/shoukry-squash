@@ -15,7 +15,7 @@
                     data-aos-offset="50">
                     <div class="service-item text-start">
                         <div class="icon">
-                            <img src="{{ url($branch->image_url) }}" alt="Shoukry Squash Academy" />
+                            <img src="{{ $branch->image_url }}" alt="Shoukry Squash Academy" />
                         </div>
                         <h5>
                             <a href="#">{{ $branch->name }} </a>
