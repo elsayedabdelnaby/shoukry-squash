@@ -1,5 +1,5 @@
 <section class="team-area pt-130 rpt-100 pb-45 rpb-15 bgs-cover rel z-1 px-lg-0 px-3"
-    style="background-image: url({{ url(asset('public/assets/images/background/bg3.webp')) }})" id="team">
+    style="background-image: url({{ url(asset('public/assets/images/background/bg5.webp')) }})" id="team">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-lg-10">

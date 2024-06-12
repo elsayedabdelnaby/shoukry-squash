@@ -84,6 +84,40 @@
                         </div>
                     </div>
                     <!-- END Working Days -->
+                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
+                        <div class="row align-items-center">
+                            <label
+                                class="col-md-4 col-xl-4 col-lg-4 col-form-label text-left">{{ __('dashboard.image_card') }}</label>
+                            <div class="col-md-8 col-lg-8 col-xl-8">
+                                <div class="image-input image-input-empty image-input-outline"
+                                    style="background-image: url('{{ $branch->image_url ?? asset('public/metronic/assets/media/users/blank.png') }}')"
+                                    id="image">
+                                    <div class="image-input-wrapper"></div>
+                                    <label
+                                        class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                        data-action="change" data-toggle="tooltip" title=""
+                                        data-original-title="{{ __('dashboard.change_image') }}">
+                                        <i class="fa fa-pen icon-sm text-muted"></i>
+                                        <input type="file" name="image" accept=".png, .jpg, .jpeg, .svg"
+                                            @if (!isset($branch)) required @endif />
+                                        <input type="hidden" name="image_remove" />
+                                    </label>
+
+                                    <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                        data-action="cancel" data-toggle="tooltip"
+                                        title="{{ __('dashboard.cancel_image') }}">
+                                        <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                    </span>
+
+                                    <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                        data-action="remove" data-toggle="tooltip"
+                                        title="{{ __('dashboard.remove_image') }}">
+                                        <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card-footer">
@@ -109,4 +143,11 @@
     <!-- Form JS -->
     <script src="{{ asset('js/form.js') }}"></script>
     <!--end::Form JS-->
+    <script src="{{ url(asset('public/metronic/assets/plugins/custom/jquery-image-uploader/image-uploader.min.js')) }}">
+    </script>
+    <script src="{{ url(asset('public/metronic/assets/plugins/custom/uppy/uppy.bundle.js')) }}"></script>
+    <!--end::Form JS-->
+    <script>
+        var verticalShot = new KTImageInput('image');
+    </script>
 @endpush
