@@ -82,7 +82,7 @@ class BranchController extends Controller
             );
     }
 
-    public function uploadedFiles(Request $request, string $storagePath, int $id = null): array
+    public function uploadedFiles(Request $request, string $storagePath, int $id = null): string
     {
         $mainImage = '';
         $fileService = new FileService;
