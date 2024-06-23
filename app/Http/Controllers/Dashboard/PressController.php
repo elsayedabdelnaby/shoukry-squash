@@ -123,11 +123,11 @@ class PressController extends Controller
             if ($request->hasFile('image_card')) {
                 $imageCard = $fileService->verifyAndUploadFile($request->file('image_card'), $imageCard, 'public', $storagePath);
             }
-        }
 
-        if ($request->has('posters')) {
-            foreach ($request->file('posters') as $key => $poster) {
-                $posters[] = $fileService->verifyAndUploadFile($request->file('posters')[$key], '', 'public', $storagePath);
+            if ($request->has('posters')) {
+                foreach ($request->file('posters') as $key => $poster) {
+                    $posters[] = $fileService->verifyAndUploadFile($request->file('posters')[$key], '', 'public', $storagePath);
+                }
             }
         }
 

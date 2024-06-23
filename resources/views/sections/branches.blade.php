@@ -32,12 +32,12 @@
                                 Daily From {{ $branch->working_from }} AM to {{ $branch->working_to }} PM.
                             </span>
                         </p>
-                        <p class="address">
+                        {{-- <p class="address">
                             <strong> Working Days : </strong>
                             <span>
                                 {{ $branch->working_days }}
                             </span>
-                        </p>
+                        </p> --}}
                         <div class="action mt-4">
                             <a href="{{ $branch->google_map }}" target="_blank" class="btn btn-sm theme-btn fw-500">
                                 <i class="fa fa-location me-2"></i>
