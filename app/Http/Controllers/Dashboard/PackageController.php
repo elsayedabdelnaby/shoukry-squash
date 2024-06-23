@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Package;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Services\FileService;
 
 class PackageController extends Controller
 {
@@ -27,6 +28,7 @@ class PackageController extends Controller
         $package = new Package();
         $package->name = $request->name;
         $package->breif = $request->breif;
+        $package->image_card = $this->uploadedFiles($request, Package::$storagePath);
         $package->sessions_number = $request->sessions_number;
         $package->save();
         return redirect('dashboard/packages')
@@ -50,6 +52,7 @@ class PackageController extends Controller
         $package->name = $request->name;
         $package->breif = $request->breif;
         $package->sessions_number = $request->sessions_number;
+        $package->image_card = $this->uploadedFiles($request, Package::$storagePath);
         $package->save();
         return redirect('dashboard/packages')
             ->with(
@@ -66,5 +69,26 @@ class PackageController extends Controller
                 'success',
                 __('dashboard.package_deleted_successfully')
             );
+    }
+
+    public function uploadedFiles(Request $request, string $storagePath, int $id = null): string
+    {
+        $imageCard = '';
+        $fileService = new FileService;
+
+        if ($id) {
+            $package = Package::find($id);
+            $imageCard = $package->image_card ? $package->image_card : '';
+
+            if ($request->hasFile('image_card')) {
+                $imageCard = $fileService->verifyAndUploadFile($request->file('image_card'), $imageCard, 'public', $storagePath);
+            }
+        } else {
+            if ($request->hasFile('image_card')) {
+                $imageCard = $fileService->verifyAndUploadFile($request->file('image_card'), $imageCard, 'public', $storagePath);
+            }
+        }
+
+        return $imageCard;
     }
 }

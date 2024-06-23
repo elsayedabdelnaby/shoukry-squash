@@ -13,11 +13,19 @@
             @foreach ($packages as $package)
                 <div class="col-xl-4 col-md-6 col-sm-10" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1500"
                     data-aos-offset="50">
+                    <div class="row">
+                        <div class="col-12">
+                            @if ($package->image_card_url)
+                                <img src="{{ url($package->image_card_url) }}" />
+                            @endif
+                        </div>
+                    </div>
                     <div class="pricing-item bg-light">
                         <h5 class="title">{{ $package->name }}</h5>
                         <div class="text">{{ $package->breif }}</div>
                         <div class="price">
-                            <span class="prev"></span>{{ $package->sessions_number }}<span class="next">Session</span>
+                            <span class="prev"></span>{{ $package->sessions_number }}<span
+                                class="next">Session</span>
                         </div>
                         <hr />
                     </div>
