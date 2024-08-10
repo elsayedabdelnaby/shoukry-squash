@@ -33,7 +33,7 @@
                             <div class="blog-item style-three mb-30" data-aos="fade-up" data-aos-duration="1500"
                                 data-aos-offset="50">
                                 <div class="image">
-                                    <img src="{{ url($record->main_image_url) ?? url(asset('public/metronic/assets/media/users/blank.png')) }}"
+                                    <img src="{{ $record->main_image_url ? url($record->main_image_url) : url(asset('public/metronic/assets/media/users/blank.png')) }}"
                                         alt="Blog" />
                                 </div>
                                 <div class="content">
@@ -41,8 +41,7 @@
                                         <a
                                             href="{{ route('press_details', ['slug' => $record->slug]) }}">{{ $record->title }}</a>
                                     </h5>
-                                    <a class="read-more"
-                                        href="{{ route('press_details', ['slug' => $record->slug]) }}">Read
+                                    <a class="read-more" href="{{ route('press_details', ['slug' => $record->slug]) }}">Read
                                         More <i class="far fa-angle-double-right"></i></a>
                                 </div>
                             </div>
