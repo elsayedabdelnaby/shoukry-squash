@@ -8,9 +8,6 @@
             <div class="row justify-content-center">
                 <div class="col-xl-10">
                     <div class="banner-inner pt-70 rpt-50 text-white">
-                        <h3 class="page-title" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
-                            Join Academy and get 25% Off
-                        </h3>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center" data-aos="fade-up" data-aos-delay="200"
                                 data-aos-duration="1500" data-aos-offset="50">
