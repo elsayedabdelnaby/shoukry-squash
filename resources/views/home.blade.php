@@ -10,7 +10,7 @@
                 style="background-image: url({{ url(asset('public/assets/images/slider/bg-main.jpg')) }})">
                 <div class="container">
                     <div class="slide-content" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
-                        <span class="sub-title"> SHOUKRY squash academy </span>
+                        <span class="sub-title"> Shoukry squash academy </span>
                         <h1>Elevate Your Game To A New Dimension</h1>
                     </div>
                 </div>
@@ -18,7 +18,6 @@
         </div>
         <div class="dot-wrap">
             <div class="container rel">
-                <div class="main-slider-dots"></div>
             </div>
         </div>
     </section>
