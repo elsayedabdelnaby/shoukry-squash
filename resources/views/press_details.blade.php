@@ -3,7 +3,7 @@
 @section('content')
     <!-- Page Banner Start -->
     <section class="page-banner-area overlay py-170 rpy-120 rel z-1 bgs-cover text-center"
-        style="background-image: url({{ url($press->main_image_url) ?? url(asset('public/assets/images/background/banner-two.jpg')) }})">
+        style="background-image: url({{ $press->main_image_url ?? url(asset('public/assets/images/background/banner-two.jpg')) }})">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-10">
