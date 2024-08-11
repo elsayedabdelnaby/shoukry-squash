@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row gap-150 align-items-center">
             <div class="col-lg-6">
-                <div class="contact-form-part rmb-55" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
+                <div class="contact-form-part rmb-55">
                     <div class="section-title mb-35">
                         <span class="sub-title mb-10">Get In Touch</span>
                         <h2>
