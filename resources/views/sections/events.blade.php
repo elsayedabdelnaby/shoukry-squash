@@ -23,7 +23,7 @@
         </div>
         <div class="row project-active g-4">
             @foreach ($events as $event)
-                <div class="col-xl-4 col-md-6 item event">
+                <div class="col-xl-4 col-md-4 item event">
                     <div class="blog-item">
                         @php
                             $eventDate = new Carbon($event->date);
@@ -56,7 +56,7 @@
                 </div>
             @endforeach
             @foreach ($upComingEvents as $event)
-                <div class="col-xl-4 col-md-6 item upcoming-event">
+                <div class="col-xl-4 col-md-4 item upcoming-event">
                     <div class="blog-item">
                         @php
                             $eventDate = new Carbon($event->date);
@@ -89,7 +89,7 @@
                 </div>
             @endforeach
             @foreach ($press as $record)
-                <div class="col-xl-4 col-md-6 item press">
+                <div class="col-xl-4 col-md-4 item press">
                     <div class="blog-item">
                         <div class="image">
                             <img src="{{ url($record->image_card_url) ?? url(asset('public/metronic/assets/media/users/blank.png')) }}"
