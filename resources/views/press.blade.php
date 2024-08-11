@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row gap-70">
                 @foreach ($press as $record)
-                    <div class="col-6">
+                    <div class="col-4">
                         <div class="service-standard-wrap">
                             <div class="blog-item style-three mb-30" data-aos="fade-up" data-aos-duration="1500"
                                 data-aos-offset="50">

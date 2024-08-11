@@ -55,7 +55,7 @@
                     </div>
                 </div>
             @endforeach
-            @foreach ($events as $event)
+            @foreach ($upComingEvents as $event)
                 <div class="col-xl-4 col-md-6 item upcoming-event">
                     <div class="blog-item">
                         @php
