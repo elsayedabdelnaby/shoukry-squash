@@ -53,7 +53,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">
+            <div class="col-lg-6">
                 <div class="contact-image-part rel">
                     <div class="experience-years">
                         <h6 class="title">
