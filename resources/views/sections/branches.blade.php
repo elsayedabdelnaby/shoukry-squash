@@ -39,7 +39,7 @@
                             </span>
                         </p> --}}
                         <div class="action mt-4">
-                            <a href="{{ $branch->google_map }}" target="_blank" class="btn btn-sm theme-btn fw-500">
+                            <a href="{{ $branch->location }}" target="_blank" class="btn btn-sm theme-btn fw-500">
                                 <i class="fa fa-location me-2"></i>
                                 Open GPS Location
                             </a>
