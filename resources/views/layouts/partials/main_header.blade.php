@@ -5,7 +5,6 @@
                 <div class="row align-items-center">
                     <div class="col-xl-4 col-lg-5">
                         <div class="top-left text-center text-lg-start">
-                            Elevate Your Game To A New Dimension!
                         </div>
                     </div>
                     <div class="col-xl-8 col-lg-7">
