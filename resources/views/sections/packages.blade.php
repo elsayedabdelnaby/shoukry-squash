@@ -28,6 +28,7 @@
                                 class="next">Session</span>
                         </div>
                         <hr />
+                        <a href="tel:+2{{ $general_settings['phone_number'] }}" class="theme-btn">More Details <i class="far fa-angle-double-right"></i></a>
                     </div>
                 </div>
             @endforeach
