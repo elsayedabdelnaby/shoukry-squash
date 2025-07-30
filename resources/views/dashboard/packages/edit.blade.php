@@ -47,12 +47,78 @@
                 <div class="form-group row">
                     <!-- Sessions Number -->
                     <div class="col-12 col-sm-12 col-md-5 col-lg-4">
-                        <x-dashboard.form.columns.number :id="'sessions_number'" :class="'form-control'" :name="'sessions_number'"
+                        <x-dashboard.form.columns.number :id="'sessions_per_week'" :class="'form-control'" :name="'sessions_per_week'"
                             :isRequired="true" :requiredMessage="__('dashboard.sessions_number_is_required')" :integerValidationMessage="__('dashboard.must_be_number')" :label="__('dashboard.sessions_number')"
-                            :value="old('sessions_number', $package->sessions_number ?? '')" />
+                            :value="old('sessions_per_week', $package->sessions_per_week ?? '')" />
                     </div>
                     <!-- End Sessions Number -->
+                    <!-- Type -->
+                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
+                        <div class="row">
+                            <label class="col-4 col-form-label font-weight-bold" for="type">{{ __('dashboard.type') }}: </label>
+                            <div class="col-8">
+                                <select class="form-control" id="type" name="type" required data-parsley-required-message="{{ __('dashboard.type_is_required') }}">
+                                    <option value="">{{ __('dashboard.select_type') }}</option>
+                                    <option value="Academy" {{ (old('type', $package->type ?? '') == 'Academy') ? 'selected' : '' }}>Academy</option>
+                                    <option value="Pre-Team" {{ (old('type', $package->type ?? '') == 'Pre-Team') ? 'selected' : '' }}>Pre-Team</option>
+                                    <option value="Team" {{ (old('type', $package->type ?? '') == 'Team') ? 'selected' : '' }}>Team</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Type -->
                 </div>
+                <div class="form-group row">
+                    <!-- Price Egyptian -->
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4">
+                        <x-dashboard.form.columns.number :id="'price_egyptian'" :class="'form-control'" :name="'price_egyptian'"
+                            :isRequired="true" :requiredMessage="__('dashboard.price_egyptian_is_required')" :integerValidationMessage="__('dashboard.must_be_number')" :label="__('dashboard.price_egyptian')"
+                            :value="old('price_egyptian', $package->price_egyptian ?? '')" :step="0.01" />
+                    </div>
+                    <!-- End Price Egyptian -->
+                    <!-- Price Other -->
+                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
+                        <x-dashboard.form.columns.number :id="'price_other'" :class="'form-control'" :name="'price_other'"
+                            :isRequired="true" :requiredMessage="__('dashboard.price_other_is_required')" :integerValidationMessage="__('dashboard.must_be_number')" :label="__('dashboard.price_other')"
+                            :value="old('price_other', $package->price_other ?? '')" :step="0.01" />
+                    </div>
+                    <!-- End Price Other -->
+                </div>
+                <div class="form-group row">
+                    <!-- One Month Price -->
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4">
+                        <x-dashboard.form.columns.number :id="'one_month_price'" :class="'form-control'" :name="'one_month_price'"
+                            :isRequired="true" :requiredMessage="__('dashboard.one_month_price_is_required')" :integerValidationMessage="__('dashboard.must_be_number')" :label="__('dashboard.one_month_price')"
+                            :value="old('one_month_price', $package->one_month_price ?? '')" :step="0.01" />
+                    </div>
+                    <!-- End One Month Price -->
+                </div>
+
+                <!-- Age Restrictions -->
+                <div class="form-group row">
+                    <!-- Minimum Age -->
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4">
+                        <x-dashboard.form.columns.number :id="'min_age'" :class="'form-control'" :name="'min_age'"
+                            :isRequired="false" :label="__('dashboard.min_age')"
+                            :value="old('min_age', $package->min_age ?? '')" :min="0" :max="100" />
+                        <small class="form-text text-muted">{{ __('dashboard.min_age_help') }}</small>
+                    </div>
+                    <!-- End Minimum Age -->
+                    <!-- Maximum Age -->
+                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
+                        <x-dashboard.form.columns.number :id="'max_age'" :class="'form-control'" :name="'max_age'"
+                            :isRequired="false" :label="__('dashboard.max_age')"
+                            :value="old('max_age', $package->max_age ?? '')" :min="0" :max="100" />
+                        <small class="form-text text-muted">{{ __('dashboard.max_age_help') }}</small>
+                    </div>
+                    <!-- End Maximum Age -->
+                </div>
+
+                @if($errors->has('age_range'))
+                    <div class="alert alert-danger">
+                        <i class="la la-exclamation-triangle"></i> {{ $errors->first('age_range') }}
+                    </div>
+                @endif
                 <div class="form-group row">
                     <!-- Image Card -->
                     <div class="col-12 col-sm-12 col-md-5 col-lg-4">

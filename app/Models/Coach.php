@@ -22,6 +22,19 @@ class Coach extends Model
 
     protected $guarded = [];
 
+    protected $fillable = [
+        'name',
+        'title',
+        'level',
+        'facebook_url',
+        'instagram_url',
+        'twitter_url',
+        'brief',
+        'is_active',
+        'image',
+        'cost_per_hour',
+    ];
+
 
     public function getActivitylogOptions(): LogOptions
     {
@@ -31,6 +44,54 @@ class Coach extends Model
     public function schedules()
     {
         return $this->hasMany(CoachSchedule::class, 'coach_id');
+    }
+
+    public function workingTimes()
+    {
+        return $this->hasMany(CoachWorkingTime::class, 'coach_id');
+    }
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class, 'coach_id');
+    }
+
+    public function getWorkingTimesByDay($weekDay)
+    {
+        return $this->workingTimes()->where('week_day', $weekDay)->orderBy('start_time')->get();
+    }
+
+    public function getWorkingTimesByDayAndBranch($weekDay, $branchId = null)
+    {
+        $query = $this->workingTimes()->where('week_day', $weekDay);
+        
+        if ($branchId) {
+            $query->where('branch_id', $branchId);
+        }
+        
+        return $query->orderBy('start_time')->get();
+    }
+
+    public function hasTimeConflict($weekDay, $startTime, $endTime, $excludeId = null, $branchId = null)
+    {
+        $query = $this->workingTimes()
+            ->where('week_day', $weekDay)
+            ->where(function($q) use ($startTime, $endTime) {
+                $q->where('start_time', '<', $endTime)
+                  ->where('end_time', '>', $startTime);
+            });
+
+        // Only filter by branch if specifically requested (for future flexibility)
+        // By default, we check across all branches to prevent physical impossibility
+        if ($branchId !== null) {
+            $query->where('branch_id', $branchId);
+        }
+
+        if ($excludeId) {
+            $query->where('id', '!=', $excludeId);
+        }
+
+        return $query->exists();
     }
 
     /**

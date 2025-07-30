@@ -21,7 +21,8 @@ class CourtController extends Controller
         return view('dashboard.courts.edit')->with([
             'action' => route('dashboard.courts.store'),
             'method' => 'POST',
-            'branches' => $branches
+            'branches' => $branches,
+            'isMultiple' => false,
         ]);
     }
 
@@ -45,7 +46,8 @@ class CourtController extends Controller
             'court' => $court,
             'method' => 'PUT',
             'action' => route('dashboard.courts.update', ['court' => $court]),
-            'branches' => $branches
+            'branches' => $branches,
+            'isMultiple' => false,
         ]);
     }
 

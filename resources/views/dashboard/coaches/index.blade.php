@@ -64,6 +64,7 @@
                         <th>{{ __('dashboard.id') }}</th>
                         <th>{{ __('dashboard.name') }}</th>
                         <th>{{ __('dashboard.title') }}</th>
+                        <th>{{ __('dashboard.level') }}</th>
                         <th>{{ __('dashboard.brief') }}</th>
                         <th>{{ __('dashboard.is_active') }}</th>
                         <th>{{ __('dashboard.actions') }}</th>
@@ -82,12 +83,21 @@
                                 {{ $coach->title }}
                             </td>
                             <td>
+                                <span class="badge badge-{{ $coach->level == 'Team' ? 'primary' : ($coach->level == 'Academy' ? 'success' : 'warning') }}">
+                                    {{ $coach->level }}
+                                </span>
+                            </td>
+                            <td>
                                 {{ $coach->brief }}
                             </td>
                             <td>
                                 {{ $coach->is_active }}
                             </td>
                             <td>
+                                <a href="{{ route('dashboard.coaches.show', ['coach' => $coach]) }}"
+                                    class="btn btn-sm btn-clean btn-icon" title="{{ __('dashboard.view') }}">
+                                    <i class="la la-eye"></i>
+                                </a>
                                 <a href="{{ route('dashboard.coaches.edit', ['coach' => $coach]) }}"
                                     class="btn btn-sm btn-clean btn-icon" title="{{ __('dashboard.edit') }}">
                                     <i class="la la-edit"></i>

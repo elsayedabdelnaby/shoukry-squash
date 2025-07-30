@@ -64,8 +64,8 @@
                         <th>{{ __('dashboard.id') }}</th>
                         <th>{{ __('dashboard.name') }}</th>
                         <th>{{ __('dashboard.address') }}</th>
-                        <th>{{ __('dashboard.working_from') }}</th>
-                        <th>{{ __('dashboard.working_to') }}</th>
+                        <th>{{ __('dashboard.starting_at') }}</th>
+                        <th>{{ __('dashboard.ending_at') }}</th>
                         <th>{{ __('dashboard.actions') }}</th>
                     </tr>
                 </thead>
@@ -82,12 +82,16 @@
                                 {{ $branch->address }}
                             </td>
                             <td>
-                                {{ $branch->working_from }}
+                                {{ $branch->starting_at }}
                             </td>
                             <td>
-                                {{ $branch->working_to }}
+                                {{ $branch->ending_at }}
                             </td>
                             <td>
+                                <a href="{{ route('dashboard.branches.timetable', ['branch' => $branch]) }}"
+                                    class="btn btn-sm btn-clean btn-icon" title="{{ __('dashboard.branch_timetable') }}">
+                                    <i class="la la-calendar"></i>
+                                </a>
                                 <a href="{{ route('dashboard.branches.edit', ['branch' => $branch]) }}"
                                     class="btn btn-sm btn-clean btn-icon" title="{{ __('dashboard.edit') }}">
                                     <i class="la la-edit"></i>

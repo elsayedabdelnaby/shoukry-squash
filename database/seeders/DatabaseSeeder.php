@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BranchesSeeder::class);
         $this->call(ObjectivesSeeder::class);
         $this->call(MissionsSeeder::class);
+        $this->call(PlayersSeeder::class);
     }
 }

@@ -15,11 +15,18 @@ class CoachController extends Controller
         return view('dashboard.coaches.index', compact('coaches'));
     }
 
+    public function show(Coach $coach)
+    {
+        $coach->load('workingTimes');
+        return view('dashboard.coaches.show', compact('coach'));
+    }
+
     public function create(Request $request)
     {
         return view('dashboard.coaches.edit')->with([
             'action' => route('dashboard.coaches.store'),
             'method' => 'POST',
+            'isMultiple' => false,
         ]);
     }
 
@@ -28,6 +35,8 @@ class CoachController extends Controller
         $coach = new Coach();
         $coach->name = $request->name;
         $coach->title = $request->title;
+        $coach->level = $request->level;
+        $coach->cost_per_hour = $request->cost_per_hour;
         $coach->facebook_url = $request->facebook_url;
         $coach->instagram_url = $request->instagram_url;
         $coach->twitter_url = $request->twitter_url;
@@ -48,6 +57,7 @@ class CoachController extends Controller
             'coach' => $coach,
             'method' => 'PUT',
             'action' => route('dashboard.coaches.update', ['coach' => $coach]),
+            'isMultiple' => false,
         ]);
     }
 
@@ -55,6 +65,8 @@ class CoachController extends Controller
     {
         $coach->name = $request->name;
         $coach->title = $request->title;
+        $coach->level = $request->level;
+        $coach->cost_per_hour = $request->cost_per_hour;
         $coach->facebook_url = $request->facebook_url;
         $coach->instagram_url = $request->instagram_url;
         $coach->twitter_url = $request->twitter_url;

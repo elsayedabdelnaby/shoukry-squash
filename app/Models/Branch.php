@@ -21,6 +21,17 @@ class Branch extends Model
 
     protected $guarded = [];
 
+    protected $fillable = [
+        'name',
+        'address',
+        'location',
+        'starting_at',
+        'ending_at',
+        'number_of_courts',
+        'working_days',
+        'image',
+    ];
+
     protected $casts = [
         'working_days' => 'array',
     ];
@@ -39,5 +50,15 @@ class Branch extends Model
     protected function getImageUrlAttribute(): string|null
     {
         return $this->image ? asset('public/' . Storage::url(self::$storagePath . '/' . $this->image)) : null;
+    }
+
+    public function courts()
+    {
+        return $this->hasMany(Court::class);
+    }
+
+    public function coaches()
+    {
+        return $this->hasManyThrough(Coach::class, CoachWorkingTime::class, 'branch_id', 'id', 'id', 'coach_id');
     }
 }

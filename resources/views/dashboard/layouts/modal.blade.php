@@ -40,9 +40,9 @@
     </div>
     <!--end::Global Config-->
     <!--begin::Global Theme Bundle(used by all pages)-->
-    <script src="{{ url(asset('public/metronic/assets/plugins/global/plugins.bundle.js')) }}"></script>
-    <script src="{{ url(asset('public/metronic/assets/plugins/custom/prismjs/prismjs.bundle.js')) }}"></script>
-    <script src="{{ url(asset('public/metronic/assets/js/scripts.bundle.js')) }}"></script>
+    <script src="{{ asset('/assets/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ asset('/assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+    <script src="{{ asset('/assets/js/scripts.bundle.js') }}"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
     <!--end::Global Theme Bundle-->
     <!--begin::Page Scripts(used by this page)-->

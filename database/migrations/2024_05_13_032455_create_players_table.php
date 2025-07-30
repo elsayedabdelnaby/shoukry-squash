@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('phone')->unique();
             $table->date('birth_date');
+            $table->enum('nationality', ['Egyptian', 'Other']);
             $table->enum('gender', ['male', 'female']);
+            $table->string('parents_contact_number')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

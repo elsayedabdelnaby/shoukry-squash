@@ -54,14 +54,14 @@
                 <div class="form-group row">
                     <!-- From -->
                     <div class="col-12 col-sm-12 col-md-5 col-lg-4">
-                        <x-dashboard.form.columns.time :id="'working_from'" :class="'form-control'" :name="'working_from'"
-                            :isRequired="true" :requiredMessage="__('dashboard.working_from_is_required')" :label="__('dashboard.working_from')" :value="old('working_from', $branch->working_from ?? '')" />
+                        <x-dashboard.form.columns.time :id="'starting_at'" :class="'form-control'" :name="'starting_at'"
+                            :isRequired="true" :requiredMessage="__('dashboard.starting_at_is_required')" :label="__('dashboard.starting_at')" :value="old('starting_at', $branch->starting_at ?? '')" />
                     </div>
                     <!-- END From -->
                     <!-- To -->
                     <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
-                        <x-dashboard.form.columns.time :id="'working_to'" :class="'form-control'" :name="'working_to'"
-                            :isRequired="true" :requiredMessage="__('dashboard.working_to_is_required')" :label="__('dashboard.working_to')" :value="old('working_to', $branch->working_to ?? '')" />
+                        <x-dashboard.form.columns.time :id="'ending_at'" :class="'form-control'" :name="'ending_at'"
+                            :isRequired="true" :requiredMessage="__('dashboard.ending_at_is_required')" :label="__('dashboard.ending_at')" :value="old('ending_at', $branch->ending_at ?? '')" />
                     </div>
                     <!-- END To -->
                 </div>

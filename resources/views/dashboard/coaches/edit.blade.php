@@ -45,32 +45,56 @@
                     <!-- End Address -->
                 </div>
                 <div class="form-group row">
-                    <!-- Facebook URL -->
+                    <!-- Level -->
                     <div class="col-12 col-sm-12 col-md-5 col-lg-4">
+                        <div class="row">
+                            <label class="col-4 col-form-label font-weight-bold" for="level">{{ __('dashboard.level') }}: </label>
+                            <div class="col-8">
+                                <select class="form-control" id="level" name="level" required data-parsley-required-message="{{ __('dashboard.level_is_required') }}">
+                                    <option value="">{{ __('dashboard.select_level') }}</option>
+                                    <option value="Academy" {{ (old('level', $coach->level ?? '') == 'Academy') ? 'selected' : '' }}>Academy</option>
+                                    <option value="Pre-Team" {{ (old('level', $coach->level ?? '') == 'Pre-Team') ? 'selected' : '' }}>Pre-Team</option>
+                                    <option value="Team" {{ (old('level', $coach->level ?? '') == 'Team') ? 'selected' : '' }}>Team</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Level -->
+                    <!-- Facebook URL -->
+                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
                         <x-dashboard.form.columns.url :id="'facebook_url'" :class="'form-control'" :name="'facebook_url'"
                             :label="__('dashboard.facebook_url')" :value="old('facebook_url', $coach->facebook_url ?? '')" :urlValidationMessage="__('dashboard.facebook_url_must_be_in_url_format')" />
                     </div>
                     <!-- End Facebook URL -->
+                </div>
+                <div class="form-group row">
                     <!-- Instagram -->
-                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4">
                         <x-dashboard.form.columns.url :id="'instagram_url'" :class="'form-control'" :name="'instagram_url'"
                             :label="__('dashboard.instagram_url')" :value="old('instagram_url', $coach->instagram_url ?? '')" :urlValidationMessage="__('dashboard.instagram_url_must_be_in_url_format')" />
                     </div>
                     <!-- End Instagram -->
-                </div>
-                <div class="form-group row">
                     <!-- Twitter URL -->
-                    <div class="col-12 col-sm-12 col-md-5 col-lg-4">
+                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
                         <x-dashboard.form.columns.url :id="'twitter_url'" :class="'form-control'" :name="'twitter_url'"
                             :label="__('dashboard.twitter_url')" :value="old('twitter_url', $coach->twitter_url ?? '')" :urlValidationMessage="__('dashboard.twitter_url_must_be_in_url_format')" />
                     </div>
                     <!-- End Twitter URL -->
+                </div>
+                <div class="form-group row">
                     <!-- Brief -->
-                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4">
                         <x-dashboard.form.columns.text :label="__('dashboard.brief')" :id="'brief'" :class="'form-control'"
                             :name="'brief'" :value="old('brief', $coach->brief ?? '')" :maxlength="255" :maxlengthMessage="__('dashboard.number_of_characters_must_less_than_or_equal_255')" />
                     </div>
                     <!-- End Brief -->
+                    <!-- Cost Per Hour -->
+                    <div class="col-12 col-sm-12 offset-md-1 col-md-5 col-lg-4">
+                        <x-dashboard.form.columns.number :id="'cost_per_hour'" :class="'form-control'" :name="'cost_per_hour'"
+                            :isRequired="true" :requiredMessage="__('dashboard.cost_per_hour_is_required')" :integerValidationMessage="__('dashboard.must_be_number')" :label="__('dashboard.cost_per_hour')"
+                            :value="old('cost_per_hour', $coach->cost_per_hour ?? '')" :step="0.01" />
+                    </div>
+                    <!-- End Cost Per Hour -->
                 </div>
                 <div class="form-group row">
                     <!-- Is Active -->
@@ -133,11 +157,11 @@
 
 @push('javascript')
     <!-- Form Parsley Validation -->
-    <script src="{{ url(asset('public/metronic/assets/plugins/parsley/parsley.min.js')) }}"></script>
+    <script src="{{ asset('metronic/assets/plugins/parsley/parsley.min.js') }}"></script>
     <!--end::Form Parsley Validation-->
     <!-- Form JS -->
     <script src="{{ asset('js/form.js') }}"></script>
-    <script src="{{ url(asset('public/metronic/assets/plugins/custom/uppy/uppy.bundle.js')) }}"></script>
+    <script src="{{ asset('metronic/assets/plugins/custom/uppy/uppy.bundle.js') }}"></script>
     <!--end::Form JS-->
     <script>
         $(document).ready(function() {

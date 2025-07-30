@@ -16,8 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->mediumText('address');
             $table->mediumText('location')->comment('google map link');
-            $table->time('working_from');
-            $table->time('working_to');
+            $table->time('starting_at');
+            $table->time('ending_at');
+            $table->integer('number_of_courts')->default(1);
+            $table->json('working_days')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

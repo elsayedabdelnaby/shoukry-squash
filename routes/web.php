@@ -16,6 +16,10 @@ use App\Http\Controllers\Dashboard\PackageController;
 use App\Http\Controllers\Dashboard\QuestionController;
 use App\Http\Controllers\Dashboard\ObjectiveController;
 use App\Http\Controllers\Dashboard\PressController;
+use App\Http\Controllers\Dashboard\ReservationController;
+use App\Http\Controllers\Dashboard\CoachWorkingTimeController;
+use App\Http\Controllers\Dashboard\PlayerController;
+use App\Http\Controllers\Dashboard\SubscriptionController;
 use App\Http\Controllers\Web\WebPressController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -60,6 +64,8 @@ Route::group(
                     Route::get('', 'index')->name('index');
                     Route::get('/create', 'create')->name('create');
                     Route::post('/store', 'store')->name('store');
+                    Route::get('{branch}', 'show')->name('show');
+                    Route::get('{branch}/timetable', 'timetable')->name('timetable');
                     Route::get('{branch}/edit', 'edit')->name('edit');
                     Route::put('{branch}/update', 'update')->name('update');
                     Route::delete('{branch}', 'destroy')->name('destroy');
@@ -80,6 +86,7 @@ Route::group(
                     Route::get('', 'index')->name('index');
                     Route::get('/create', 'create')->name('create');
                     Route::post('/store', 'store')->name('store');
+                    Route::get('{coach}', 'show')->name('show');
                     Route::get('{coach}/edit', 'edit')->name('edit');
                     Route::put('{coach}/update', 'update')->name('update');
                     Route::delete('{coach}', 'destroy')->name('destroy');
@@ -93,6 +100,17 @@ Route::group(
                     Route::get('{package}/edit', 'edit')->name('edit');
                     Route::put('{package}/update', 'update')->name('update');
                     Route::delete('{package}', 'destroy')->name('destroy');
+                });
+
+                //coach working times
+                Route::name('coach-working-times.')->prefix('coach-working-times')->controller(CoachWorkingTimeController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create/{coach_id?}', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{coachWorkingTime}', 'show')->name('show');
+                    Route::get('{coachWorkingTime}/edit', 'edit')->name('edit');
+                    Route::put('{coachWorkingTime}/update', 'update')->name('update');
+                    Route::delete('{coachWorkingTime}', 'destroy')->name('destroy');
                 });
 
                 //missions
@@ -152,6 +170,35 @@ Route::group(
                     Route::put('{question}/update', 'update')->name('update');
                     Route::delete('{question}', 'destroy')->name('destroy');
                 });
+
+                //players
+                Route::name('players.')->prefix('players')->controller(PlayerController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{player}', 'show')->name('show');
+                    Route::get('{player}/edit', 'edit')->name('edit');
+                    Route::put('{player}/update', 'update')->name('update');
+                    Route::delete('{player}', 'destroy')->name('destroy');
+                });
+
+                //subscriptions
+                Route::name('subscriptions.')->prefix('subscriptions')->controller(SubscriptionController::class)->group(function () {
+                    Route::get('', 'index')->name('index');
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/store', 'store')->name('store');
+                    Route::get('{subscription}', 'show')->name('show');
+                    Route::get('{subscription}/edit', 'edit')->name('edit');
+                    Route::put('{subscription}/update', 'update')->name('update');
+                                           Route::delete('{subscription}', 'destroy')->name('destroy');
+                       Route::post('/get-package-price', 'getPackagePrice')->name('get-package-price');
+                   });
+
+                   //reservations
+                   Route::resource('reservations', ReservationController::class);
+                   Route::get('reservations/coach-cost', [ReservationController::class, 'coachCostForm'])->name('reservations.coach-cost');
+                   Route::post('reservations/coach-cost-calculation', [ReservationController::class, 'coachCostCalculation'])->name('reservations.coach-cost-calculation');
+                   Route::post('reservations/check-session-limit', [ReservationController::class, 'checkSessionLimit'])->name('reservations.check-session-limit');
             });
         });
     }

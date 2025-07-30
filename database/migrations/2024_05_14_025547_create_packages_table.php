@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('breif');
-            $table->smallInteger('sessions_number');
+            $table->smallInteger('sessions_per_week');
+            $table->decimal('price_egyptian', 8, 2);
+            $table->decimal('price_other', 8, 2);
+            $table->enum('type', ['Team', 'Academy', 'Pre-Team']);
+            $table->decimal('one_month_price', 8, 2);
             $table->timestamps();
             $table->softDeletes();
         });

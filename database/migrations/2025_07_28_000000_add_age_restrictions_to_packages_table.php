@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('branches', function (Blueprint $table) {
-            $table->string('working_days')->nullable();
+        Schema::table('packages', function (Blueprint $table) {
+            $table->integer('min_age')->nullable()->after('one_month_price');
+            $table->integer('max_age')->nullable()->after('min_age');
         });
     }
 
@@ -21,8 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('branches', function (Blueprint $table) {
-            $table->dropColumn('working_days');
+        Schema::table('packages', function (Blueprint $table) {
+            $table->dropColumn(['min_age', 'max_age']);
         });
     }
-};
+}; 

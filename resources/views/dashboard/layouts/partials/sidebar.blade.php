@@ -101,6 +101,26 @@
                     </a>
                 </li>
 
+                <li class="menu-item {{ request()->routeIs('dashboard.players.*') ? 'menu-item-active' : null }}"
+                    aria-haspopup="true">
+                    <a href="{{ route('dashboard.players.index') }}" class="menu-link">
+                        <i class="menu-bullet menu-bullet-line">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">{{ __('dashboard.players') }}</span>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ request()->routeIs('dashboard.subscriptions.*') ? 'menu-item-active' : null }}"
+                    aria-haspopup="true">
+                    <a href="{{ route('dashboard.subscriptions.index') }}" class="menu-link">
+                        <i class="menu-bullet menu-bullet-line">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">{{ __('dashboard.subscriptions') }}</span>
+                    </a>
+                </li>
+
 
                 <li class="menu-item {{ request()->routeIs('dashboard.missions.*') ? 'menu-item-active' : null }}"
                     aria-haspopup="true">

@@ -65,6 +65,11 @@
                         <th>{{ __('dashboard.name') }}</th>
                         <th>{{ __('dashboard.brief') }}</th>
                         <th>{{ __('dashboard.sessions_number') }}</th>
+                        <th>{{ __('dashboard.type') }}</th>
+                        <th>{{ __('dashboard.price_egyptian') }}</th>
+                        <th>{{ __('dashboard.price_other') }}</th>
+                        <th>{{ __('dashboard.one_month_price') }}</th>
+                        <th>{{ __('dashboard.age_range') }}</th>
                         <th>{{ __('dashboard.actions') }}</th>
                     </tr>
                 </thead>
@@ -81,7 +86,24 @@
                                 {{ $package->breif }}
                             </td>
                             <td>
-                                {{ $package->sessions_number }}
+                                {{ $package->sessions_per_week }}
+                            </td>
+                            <td>
+                                <span class="badge badge-{{ $package->type == 'Team' ? 'primary' : ($package->type == 'Academy' ? 'success' : 'warning') }}">
+                                    {{ $package->type }}
+                                </span>
+                            </td>
+                            <td>
+                                ${{ number_format($package->price_egyptian, 2) }}
+                            </td>
+                            <td>
+                                ${{ number_format($package->price_other, 2) }}
+                            </td>
+                            <td>
+                                ${{ number_format($package->one_month_price, 2) }}
+                            </td>
+                            <td>
+                                <span class="badge badge-info">{{ $package->age_range }}</span>
                             </td>
                             <td>
                                 <a href="{{ route('dashboard.packages.edit', ['package' => $package]) }}"
