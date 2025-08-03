@@ -141,7 +141,7 @@
     <script src="{{ url(asset('public/metronic/assets/plugins/parsley/parsley.min.js')) }}"></script>
     <!--end::Form Parsley Validation-->
     <!-- Form JS -->
-    <script src="{{ asset('js/form.js') }}"></script>
+    <script src="{{ url(asset('js/form.js')) }}"></script>
     <!--end::Form JS-->
     <script src="{{ url(asset('public/metronic/assets/plugins/custom/jquery-image-uploader/image-uploader.min.js')) }}">
     </script>
